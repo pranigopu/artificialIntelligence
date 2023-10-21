@@ -1,2 +1,2 @@
 # Artificial intelligence
-The lab work and projects done in the course of the "Artificial Intelligence" module of my MSc. AI degree.
+This repository records the lab work done in the artificial intelligence course of my master's in AI degree.
