@@ -4,6 +4,7 @@ This repository records the lab work done in the artificial intelligence course 
 ## Lab sessions
 - Lab 1: Python basics
   - Formatting strings
+  - List comprehension
   - Matrix multiplication via loops
   - Matrix multiplication via `NumPy`
 - Lab 2: Uninformed search
