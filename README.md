@@ -13,6 +13,6 @@ This repository records the lab work done in the artificial intelligence course 
   - Breadth-first search (BFS)
     - Queue-based version
     - Search tree-based version
-- Lab 3: Informed search
+- Lab 3: Informed & local search
   - A* search
   - Simulated annealing
