@@ -18,5 +18,5 @@ This repository records the lab work done in the artificial intelligence course 
   - A* search
   - Simulated annealing
 - Assignment 1
-  - Part 1: Agenda-based search (BFS, DFS, UCS, heuristic-based search, etc.)
+  - Part 1: Agenda-based search (BFS, DFS, UCS, search heuristic...)
   - Part 2: Evolutionary algorithm
