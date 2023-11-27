@@ -55,7 +55,7 @@ f(x):
 1. $Dog(x) \land Own(YOU, x)$
 2. $Bushel(ROBIN)$
 3. $\forall p \text{ } \forall z \text{ } \exist x \text{ } (Person(p) \land Rabbit(x) \land Rabbit(y) \land Own(p, y) \land Chase(z, x) \rightarrow Hate(p, z))$
-4. $\forall x \text{ } \exists y \text{ } (Dog(x) \land Rabbit(y) \land Chase(x, y))$
+4. $\forall x \text{ } \exist y \text{ } (Dog(x) \land Rabbit(y) \land Chase(x, y))$
 5. $\forall p \text{ } (Person(p) \land Bushel(p) \rightarrow Own(p, x) \land(Rabbit(x) \lor GroceryStore(x)))$
 6. $\forall p \text{ } (Person(p) \land Person(q) \land Own(q, x) \land Hate(p, x) \rightarrow \lnot WillDate(p, q))$
 
@@ -69,41 +69,63 @@ Transforming the statements to conjunctive normal form (CNF), i.e. a conjunct of
 
 **NOTE 2**: When replacing the existential quantifier with a function $f$ of a universally quantified variable $x$, we use the same function $f$ throughout the premises, because the existential quantifier means at least one object is such that the condition involving $x$ holds true. $f$ is defined so that it maps each possible value of $x$ to a particular object accordingly.
 
-1.
+1.<br>
 $Dog(x) \land Own(YOU, x) \equiv (Dog(x)) \land (Own(YOU))$
 
-2.
+2.<br>
 $Bushel(ROBIN)$ (already in CNF)
 
-3.
+3.<br>
 $\forall p \text{ } \forall z \text{ } \exists x \text{ } (Person(p) \land Rabbit(x) \land Rabbit(y) \land Own(p, y) \land Chase(z, x) \rightarrow Hate(p, z))$
+
 _... replacing the existential quantifier with a function of the universally quantified variable..._
+
 $\equiv Person(p) \land Rabbit(f(z)) \land Rabbit(y) \land Own(p, y) \land Chase(z, f(z)) \rightarrow Hate(p, z)$
+
 _... removing universal quantifier..._
+
 $\equiv Person(p) \land Rabbit(f(z)) \land Rabbit(y) \land Own(p, y) \land Chase(z, f(z)) \rightarrow Hate(p, z)$
+
 _... replacing_ $P \rightarrow Q$ _with_ $\lnot P \lor Q$ _..._
+
 $\equiv \lnot(Person(p) \land Rabbit(f(z)) \land Rabbit(y) \land Own(p, y) \land Chase(z, f(z))) \lor Hate(p, z)$
+
 _... applying De Morgan's law..._
+
 $\equiv (\lnot Person(p) \lor \lnot Rabbit(f(z)) \lor \lnot Rabbit(y) \lor \lnot Own(p, y) \lor \lnot Chase(z, f(z))) \lor Hate(p, z)$
+
 _... rearranging parantheses..._
+
 $\equiv (\lnot Person(p) \lor \lnot Rabbit(f(z)) \lor \lnot Rabbit(y) \lor \lnot Own(p, y) \lor \lnot Chase(z, f(z)) \lor Hate(p, z))$
 
-4.
+4.<br>
 $\forall x \text{ } \exists y \text{ } (Dog(x) \land Rabbit(y) \land Chase(x, y))$
+
 _... replacing the existential quantifier with a function of the universally quantified variable..._
+
 $\equiv \forall x \text{ } (Dog(x) \land Rabbit(f(x)) \land Chase(x, f(x)))$
+
 _... removing universal quantifier..._
+
 $\equiv (Dog(x) \land (Rabbit(f(x))) \land (Chase(x, f(x)))$
 
-5.
+5.<br>
 $\forall p \text{ } (Person(p) \land Bushel(p) \rightarrow Own(p, x) \land(Rabbit(x) \lor GroceryStore(x)))$
+
 _... removing universal quantifier..._
+
 $\equiv Person(p) \land Bushel(p) \rightarrow Own(p, x) \land (Rabbit(x) \lor GroceryStore(x))$
+
 _... replacing_ $P \rightarrow Q$ _with_ $\lnot P \lor Q$ _..._
+
 $\equiv \lnot(Person(p) \land Bushel(p)) \lor (Own(p, x) \land (Rabbit(x) \lor GroceryStore(x)))$
+
 _... applying De Morgan's law..._
+
 $\equiv (\lnot Person(p) \lor \lnot Bushel(p)) \lor (Own(p, x) \land (Rabbit(x) \lor GroceryStore(x)))$
+
 _... distributivity..._
+
 $\equiv (\lnot Person(p) \lor \lnot Bushel(p) \lor Own(p, x)) \land (\lnot Person(p) \lor \lnot Bushel(p) \lor Rabbit(x) \lor GroceryStore(x))$
 
 For convenience, we shall do the following assignments:
@@ -115,20 +137,32 @@ For convenience, we shall do the following assignments:
 Hence, our expression becomes:
 
 $P \lor (Q \land R)$
+
 _... distributivity..._
+
 $\equiv (P \lor Q) \land (P \lor R)$
+
 _... replacing the substitutions..._
+
 $\equiv (\lnot Person(p) \lor \lnot Bushel(p) \lor Own(p, x) \lor Rabbit(x)) \land (\lnot Person(p) \lor \lnot Bushel(p) \lor Own(p, x) \lor GroceryStore(x))$
 
-6.
+6.<br>
 $\forall p \text{ } (Person(p) \land Person(q) \land Own(q, x) \land Hate(p, x) \rightarrow \lnot WillDate(p, q))$
+
 _... removing universal quantifier..._
+
 $\equiv Person(p) \land Person(q) \land Own(q, x) \land Hate(p, x) \rightarrow \lnot WillDate(p, q)$
+
 _... replacing_ $P \rightarrow Q$ _with_ $\lnot P \lor Q$ _..._
+
 $\equiv \lnot (Person(p) \land Person(q) \land Own(q, x) \land Hate(p, x)) \lor \lnot WillDate(p, q)$
+
 _... applying De Morgan's law..._
+
 $\equiv (\lnot Person(p) \lor \lnot Person(q) \lor \lnot Own(q, x) \lor \lnot Hate(p, x)) \lor \lnot WillDate(p, q)$
+
 _... rearranging parantheses..._
+
 $\equiv (\lnot Person(p) \lor \lnot Person(q) \lor \lnot Own(q, x) \lor \lnot Hate(p, x) \lor \lnot WillDate(p, q))$
 
 Standardising the variables so that each clause's variables are unique to it:
@@ -149,16 +183,27 @@ $\lnot (GroceryStore(a) \land Own(ROBIN, a) \rightarrow \lnot WillDate(ROBIN, YO
 Negation of the above and converting the negation to CNF:
 
 _... negation of the above..._
+
 $\lnot(\lnot (GroceryStore(a) \land Own(ROBIN, a)) \rightarrow \lnot WillDate(ROBIN, YOU))$
+
 _... replacing_ $P \rightarrow Q$ _with_ $\lnot P \lor Q$ _..._
+
 $\equiv \lnot (\lnot \lnot (GroceryStore(a) \land Own(ROBIN, a)) \lor \lnot WillDate(ROBIN, YOU))$
+
 _... eliminating double negative..._
+
 $\equiv \lnot ((GroceryStore(a) \land Own(ROBIN, a)) \lor \lnot WillDate(ROBIN, YOU))$
+
 _... applying De Morgan's law..._
+
 $\equiv \lnot (GroceryStore(a) \land Own(ROBIN, a)) \land \lnot \lnot WillDate(ROBIN, YOU)$
+
 _... eliminating double negative..._
+
 $\equiv \lnot (GroceryStore(a) \land Own(ROBIN, a)) \land (WillDate(ROBIN, YOU))$
+
 _... applying De Morgan's law..._
+
 $\equiv (\lnot GroceryStore(a) \lor \lnot Own(ROBIN, a)) \land (WillDate(ROBIN, YOU))$
 
 ### Part 4
@@ -211,7 +256,9 @@ The following are given, i.e. taken as true:
 From the above, we get:
 
 $(\lnot Person(ROBIN) \lor \lnot Bushel(ROBIN) \lor Own(ROBIN, a)) \land (\lnot Person(ROBIN) \lor \lnot Bushel(ROBIN) \lor Rabbit(a) \lor GroceryStore(a))$
+
  $\equiv (F \lor Own(ROBIN, a)) \land (F \lor Rabbit(a) \lor GroceryStore(a))$
+
  $\equiv Own(ROBIN, a) \land (Rabbit(a) \lor GroceryStore(a))$
 
 ---
@@ -228,16 +275,25 @@ $(\lnot Person(ROBIN) \lor \lnot Bushel(ROBIN) \lor Own(ROBIN, a)) \land (\lnot 
 ##### Explanation
 
 We have that:
+
 $\lnot Own(ROBIN, a) \lor \lnot GroceryStore(a) = T$
+
 _... applying De Morgan's law..._
+
 $\equiv \lnot (Own(ROBIN, a) \land GroceryStore(a)) = T$
+
 $\implies Own(ROBIN, a) \land GroceryStore(a) = F$
 
 Also, we have that:
+
 $Own(ROBIN, a) \land (Rabbit(a) \lor GroceryStore(a))$
+
 _... distributivity..._
+
 $\equiv (Own(ROBIN, a) \land Rabbit(a)) \lor (Own(ROBIN, a) \land GroceryStore(a))$
+
 $\equiv (Own(ROBIN, a) \land Rabbit(a)) \lor F$
+
 $\equiv Own(ROBIN, a) \land Rabbit(a)$
 
 ---
@@ -277,7 +333,9 @@ Also, we know that:
 Hence, we have that:
 
 $(\lnot Person(ROBIN) \lor \lnot Rabbit(f(d_1)) \lor \lnot Rabbit(a) \lor \lnot Own(ROBIN, a) \lor \lnot Chase(d_1, f(d_1)) \lor Hate(ROBIN, d_1))$
+
 $\equiv (F \lor F \lor F \lor F \lor Hate(ROBIN, d_1))$
+
 $\equiv Hate(ROBIN, d_1)$ ... (Resolution 5)
 
 ---
