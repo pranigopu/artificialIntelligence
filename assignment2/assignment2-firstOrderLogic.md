@@ -54,8 +54,8 @@ f(x):
 
 1. $Dog(x) \land Own(YOU, x)$
 2. $Bushel(ROBIN)$
-3. $\forall p \text{ } \forall z \text{ } \exist x \text{ } (Person(p) \land Rabbit(x) \land Rabbit(y) \land Own(p, y) \land Chase(z, x) \rightarrow Hate(p, z))$
-4. $\forall x \text{ } \exist y \text{ } (Dog(x) \land Rabbit(y) \land Chase(x, y))$
+3. $\forall p \text{ } \forall z \text{ } \exists x \text{ } (Person(p) \land Rabbit(x) \land Rabbit(y) \land Own(p, y) \land Chase(z, x) \rightarrow Hate(p, z))$
+4. $\forall x \text{ } \exists y \text{ } (Dog(x) \land Rabbit(y) \land Chase(x, y))$
 5. $\forall p \text{ } (Person(p) \land Bushel(p) \rightarrow Own(p, x) \land(Rabbit(x) \lor GroceryStore(x)))$
 6. $\forall p \text{ } (Person(p) \land Person(q) \land Own(q, x) \land Hate(p, x) \rightarrow \lnot WillDate(p, q))$
 
