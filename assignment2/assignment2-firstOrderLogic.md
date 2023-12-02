@@ -748,7 +748,7 @@ For reference, we must draw clauses from the following:
 			<td>{11, 22}</td>
 			<td>None</td>
 			<td>
-				{$\text { }$}
+				{ $\text { }$ }
 			</td>
 		</tr>
 	</tbody>
