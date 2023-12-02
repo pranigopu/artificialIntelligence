@@ -20,3 +20,9 @@ This repository records the lab work done in the artificial intelligence course 
 - Assignment 1
   - Part 1: Agenda-based search (BFS, DFS, UCS, search heuristic...)
   - Part 2: Evolutionary algorithm
+- Assignment 2
+  - Part 1: Proof by resolution
+    - First-order logic
+    - Conjunctive normal form
+    - Proof by resolution
+  - Part 2: Convolutional neural networks
