@@ -72,7 +72,7 @@ f_C(x):
 	return any y such that C(x, y)=T // Return anything chased by x
 ```
 
-**NOTE ON IMPLEMENTING THE ABOVE FUNCTIONS**:<br>The function $f_O$ can be implemented if (1) the set of all things owned by $x$ is known and feasibly sized or (2) the mapping between possible owners and any one thing they own is available. In short, $f_O$ is defined such that ir returns an object chased by $x$ and, if possible, returns the rabbit or grocery store object that is owned by $x$. Similarly, the function $f__C$ may not be implementable directly in the form above, but it can be implemented if (1) the set of all things chased by $x$ is known and feasibly sized or (2) the mapping between possible rabbit chasers and any one thing they chase is available. In short, $f_C$ is defined such that it returns an object chased by $x$ and, if possible, returns the rabbit object that is chased by $x$.
+**NOTE ON IMPLEMENTING THE ABOVE FUNCTIONS**:<br>The function $f_O$ can be implemented if (1) the set of all things owned by $x$ is known and feasibly sized or (2) the mapping between possible owners and any one thing they own is available. In short, $f_O$ is defined such that ir returns an object chased by $x$ and, if possible, returns the rabbit or grocery store object that is owned by $x$. Similarly, the function $f_C$ may not be implementable directly in the form above, but it can be implemented if (1) the set of all things chased by $x$ is known and feasibly sized or (2) the mapping between possible rabbit chasers and any one thing they chase is available. In short, $f_C$ is defined such that it returns an object chased by $x$ and, if possible, returns the rabbit object that is chased by $x$.
 
 ## Part 1
 
