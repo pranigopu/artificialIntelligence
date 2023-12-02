@@ -667,14 +667,14 @@ For reference, we must draw clauses from the following:
 	<thead>
 		<th>ID</th>
 		<th>Clauses</th>
-		<th width=200px>Unifier</th>
+		<th width=210px>Unifier</th>
 		<th width=500px>Resolution</th>
 	</thead>
 	<tbody>
 		<tr>
 			<td>14</td>
 			<td>{7, 10}</td>
-			<td>{ $f_O(x_7)/x_{12}, ROBIN/x_7$ }</td>
+			<td>{ $f_O(x_7)/x_{12}$, $ROBIN/x_7$ }</td>
 			<td>
 				$\lnot P(ROBIN) \lor \lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))
 			$</td>
@@ -682,7 +682,7 @@ For reference, we must draw clauses from the following:
 		<tr>
 			<td>15</td>
 			<td>{4, 5}</td>
-			<td>{ $x_4/x_5, f_C(x_4)/x_3$ }</td>
+			<td>{ $x_4/x_5$, $f_C(x_4)/x_3$ }</td>
 			<td>
 				$\lnot P(x_1) \lor \lnot R(x_2) \lor \lnot O(x_1, x_2) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_1, x_4) \lor \lnot D(x_4)$
 			</td>
@@ -706,7 +706,7 @@ For reference, we must draw clauses from the following:
 		<tr>
 			<td>18</td>
 			<td>{14, 17}</td>
-			<td>{ $x_2/f_O(x_1), ROBIN/x_1$ }</td>
+			<td>{ $x_2/f_O(x_1)$, $ROBIN/x_1$ }</td>
 			<td>
 				$\lnot P(ROBIN) \lor \lnot D(x_4) \lor \lnot P(x_{10}) \lor \lnot O(x_{10}, x_4) \lor \lnot W(ROBIN, x_{10})$
 			</td>
