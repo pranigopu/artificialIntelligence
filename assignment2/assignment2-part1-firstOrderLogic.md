@@ -404,13 +404,13 @@ $\forall p \text{ } \forall q \text{ } (P(p) \land P(q) \land \exists x \text{ }
 
 First-order logic formulation of the conclusion:
 
-$\exists x \text{ } (\lnot (G(x) \land O(ROBIN, x)) \rightarrow \lnot W(ROBIN, YOU))$
+$\forall x \text{ } (\lnot(G(x) \land O(ROBIN, x)) \rightarrow \lnot W(ROBIN, YOU))$
 
-Negation of the above and converting the negation to CNF:
+Negating the conclusion:
 
-$\exists x \text{ } (\lnot (G(x) \land O(ROBIN, x)) \rightarrow \lnot W(ROBIN, YOU))$
+$\lnot(\forall x \text{ } (\lnot(G(x) \land O(ROBIN, x)) \rightarrow \lnot W(ROBIN, YOU)))$
 
-$\equiv \forall x \text{ } \lnot(\lnot (G(x) \land O(ROBIN, x)) \rightarrow \lnot W(ROBIN, YOU))$
+Converting the above to CNF:
 
 <table>
 	<thead>
@@ -420,19 +420,15 @@ $\equiv \forall x \text{ } \lnot(\lnot (G(x) \land O(ROBIN, x)) \rightarrow \lno
 		<tr>
 			<td>RI</td>
 			<td>
-				$\forall x \text{ } (\lnot (\lnot \lnot (G(a) \land O(ROBIN, a)) \lor \lnot W(ROBIN, YOU)))$
+				$\lnot(\lnot(\forall x \text{ } \lnot (G(x) \land O(ROBIN, x))) \lor \lnot W(ROBIN, YOU))$
 			</td>
 		</tr>
 		<tr>
 			<td>MN</td>
 			<td>
-				$\forall x \text{ } (\lnot ((G(a) \land O(ROBIN, a)) \lor \lnot W(ROBIN, YOU)))$
+				$\forall x \text{ } \lnot (G(x) \land O(ROBIN, x)) \land W(ROBIN, YOU)$
 				<br>
-				$\equiv \forall x \text{ } (\lnot (G(a) \land O(ROBIN, a)) \land \lnot \lnot W(ROBIN, YOU))$
-				<br>
-				$\equiv \forall x \text{ } (\lnot (G(a) \land O(ROBIN, a)) \land (W(ROBIN, YOU)))$
-				<br>
-				$\equiv \forall x \text{ } ((\lnot G(a) \lor \lnot O(ROBIN, a)) \land (W(ROBIN, YOU)))$
+				$\equiv \forall x \text{ } (\lnot G(x) \lor \lnot O(ROBIN, x)) \land W(ROBIN, YOU)$
 			</td>
 		</tr>
 		<tr>
@@ -442,7 +438,7 @@ $\equiv \forall x \text{ } \lnot(\lnot (G(x) \land O(ROBIN, x)) \rightarrow \lno
 		<tr>
 			<td>DU</td>
 			<td>
-			$(\lnot G(a) \lor \lnot O(ROBIN, a)) \land (W(ROBIN, YOU))$
+				$(\lnot G(x) \lor \lnot O(ROBIN, x)) \land W(ROBIN, YOU)$
 			</td>
 		</tr>
 		<tr>
