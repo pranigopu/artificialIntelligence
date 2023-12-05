@@ -180,7 +180,7 @@ $\exists x \text{ } D(x) \land O(YOU, x)$
 	<thead>
 		<tr>
 			<th width=50px>Step</th>
-			<th width=500px>Action(s)</th>
+			<th width=500px>Result</th>
 			<th>Remarks</th>
 		</tr>
 	</thead>
@@ -225,7 +225,7 @@ $B(ROBIN)$
 	<thead>
 		<tr>
 			<th width=50px>Step</th>
-			<th width=500px>Action(s)</th>
+			<th width=500px>Result</th>
 			<th>Remarks</th>
 		</tr>
 	</thead>
@@ -266,7 +266,7 @@ $\forall p \text{ } \forall z \text{ } (P(p) \land \exists x \text{ } (R(x) \lan
 	<thead>
 		<tr>
 			<th width=50px>Step</th>
-			<th width=500px>Action(s)</th>
+			<th width=500px>Result</th>
 			<th>Remarks</th>
 		</tr>
 	</thead>
@@ -317,7 +317,7 @@ $\forall x \text{ } (D(x) \rightarrow \exists y \text{ } (R(y) \land C(x, y)))$
 	<thead>
 		<tr>
 			<th width=50px>Step</th>
-			<th width=500px>Action(s)</th>
+			<th width=500px>Result</th>
 			<th>Remarks</th>
 		</tr>
 	</thead>
@@ -382,7 +382,7 @@ $\forall p \text{ } (P(p) \land B(p) \rightarrow \exists x \text{ } ((R(x) \lor 
 	<thead>
 		<tr>
 			<th width=50px>Step</th>
-			<th width=500px>Action(s)</th>
+			<th width=500px>Result</th>
 			<th>Remarks</th>
 		</tr>
 	</thead>
@@ -448,7 +448,7 @@ $\forall p \text{ } \forall q \text{ } (P(p) \land P(q) \land \exists x \text{ }
 	<thead>
 		<tr>
 			<th width=50px>Step</th>
-			<th width=500px>Action(s)</th>
+			<th width=500px>Result</th>
 			<th>Remarks</th>
 		</tr>
 	</thead>
@@ -636,7 +636,7 @@ For reference, we must draw clauses from the following:
 	</tbody>
 </table>
 
-### Unstandardised clauses:
+### Unstandardised clauses
 
 <table>
 	<thead>
@@ -713,7 +713,7 @@ For reference, we must draw clauses from the following:
 	</tbody>
 </table>
 
-### Standardised clauses:
+### Standardised clauses
 
 <table>
 	<thead>
@@ -791,6 +791,32 @@ For reference, we must draw clauses from the following:
 </table>
 
 ### Proof by resolution
+
+Proof by resolution is done using three operations:
+
+1. Unification
+2. Factoring
+3. Resolution
+
+<u>**1. Unification**</u>:
+
+Unification is the process of instantiating variables of one or more clauses with relevant constants or functions. In general, unification is represented using a unifier of the form: { $x_{new}/x_{old}, y_{new}/y_{old}...$ }. Here, $x_1/x_2$ means $x_1$ replaces $x_2$. We can replace multiple variables in this manner, separating each pair of variables and their replacements using commas.
+
+<u>**2. Factoring**</u>:
+
+Factoring is the process of removing all duplicates of a literal in a disjunctive clause (i.e. a clause wherein each literal is separated by a disjunction, i.e. OR, i.e. $\lor$). This is because $U \lor U \lor ... \lor U \equiv U$. This operation has not been used in this proof.
+
+<u>**3. Resolution**</u>:
+
+Given that clauses $C_1$ and $C_2$ are two disjuctive clauses such that they contain at least one pair of complementary literals (i.e. $C_1$ contains at least one literal $A$ such that $\lor A$ is present in $C_2$), resolution is the process of reducing the conjunction of $C_1$ and $C_2$, i.e. $C_1 \land C_2$ to a single disjunctive clause containing all the literals of $C_1$ and $C_2$ except the complementary literals. In other terms, if $A$, $B$ and $C$ are three literals, then:
+
+$(A \lor B) \land (\lnot A \lor C) \equiv B \lor C$
+
+---
+
+For the following proof, we have only used unification and resolution. Note that always resolution follows unification, i.e. we resolve clauses after applying the unifier. The given unifier applies to both of the clauses mentioned in the "Clauses" column, and the "Resolution" column contains the new disjunctive clause after resolution. The resolved clause can later be referrenced using the number given in the "ID" column for the row where the resolution took place; hence, the "ID" applies to the resolved clause.
+
+---
 
 <table>
 	<thead>
@@ -882,6 +908,8 @@ For reference, we must draw clauses from the following:
 		</tr>
 	</tbody>
 </table>
+
+---
 
 We see that with the above sequence of steps and with the right unifiers, we were able to negate the selected clauses completely, i.e. we obtained a contradiction. This implies that, since the negated conclusion is clearly false given the contradiction, the conclusion is true. More specifically, the following hypothetical is true:
 
