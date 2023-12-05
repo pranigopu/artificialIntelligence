@@ -1,9 +1,9 @@
-<style>
+<styles>
 	*
 	{
 		font-family: "Times New Roman"
 	}
-</style>
+</styles>
 
 # ECS759P: _Artificial Intelligence_<br>Assignment 2, Question 1
 
