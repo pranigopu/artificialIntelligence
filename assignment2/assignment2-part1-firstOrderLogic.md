@@ -1,10 +1,3 @@
-<styles>
-	*
-	{
-		font-family: "Times New Roman"
-	}
-</styles>
-
 # ECS759P: _Artificial Intelligence_<br>Assignment 2, Question 1
 
 ## Key points
