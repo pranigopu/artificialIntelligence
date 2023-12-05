@@ -153,7 +153,7 @@ Existentials, i.e. existentially quantified variables (ex. $\exists x \text{ } .
 
 $\forall x \text { } \exists y \text { } T(x,y)\iff \exists f \text { } \forall x \text { } T(x,f(x))$
 
-Here, $f(x)$ is a function that maps $x$ to $y$. Essentially, the sentence "for every $x$ there exists a $y$ such that R(x,y)" is converted into the logically equivalent statement "there exists a function $f$ mapping every $x$ into a $y$ such that, for every $x$ it holds that $T(x,f(x))$".
+Here, $f(x)$ is a function that maps $x$ to $y$. Essentially, the sentence...<br>"for every $x$ there exists a $y$ such that R(x,y)"<br>... is converted into the logically equivalent statement...<br>"there exists a function $f$ mapping every $x$ into a $y$ such that, for every $x$ it holds that $T(x,f(x))$"
 
 > REFERENCES:
 > - https://www.skillvertex.com/blog/what-is-skolemization-in-artificial-intelligence/
