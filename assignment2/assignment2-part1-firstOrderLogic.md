@@ -397,7 +397,7 @@ For the following proof, we have mainly used unification and resolution. Note th
 ---
 
 |ID|Clauses|Unifier|Result|
-|--- |--- |------ |--------- |
+|--- |--- |--- |--- |
 |14|{07, 10}|{ $f_O(x_7)/x_{12}$, $ROBIN/x_7$ }|Unified clauses:<br>07: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor G(f_O(ROBIN))$<br>10: $\lnot G(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$<br><br>Resolution:<br>14: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$|
 |15|{04, 05}|{ $x_4/x_5$, $f_C(x_4)/x_3$ }|Unified clauses:<br>04: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot R(f_C(x_4)) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4)$<br>05: $\lnot D(x_4) \lor R(f_C(x_4))$<br><br>Resolution:<br>15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$|
 |16|{06, 15}|{ $x_4/x_6$ }|Unified clauses:<br>06: $\lnot D(x_4) \lor C(x_4, f_C(x_4))$<br>15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$<br><br>Resolution:<br>16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor H(x_2, x_4) \lor \lnot D(x_4)$|
