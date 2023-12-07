@@ -1,5 +1,29 @@
 # ECS759P: _Artificial Intelligence_<br>Assignment 2, Question 1
 
+- [ECS759P: _Artificial Intelligence_Assignment 2, Question 1](#ecs759p-artificial-intelligenceassignment-2-question-1)
+  - [Key points](#key-points)
+  - [Statements \& conclusion](#statements--conclusion)
+  - [Interpretations of certain words \& phrases](#interpretations-of-certain-words--phrases)
+  - [Initialising knowledge base](#initialising-knowledge-base)
+  - [Part 1](#part-1)
+  - [Part 2](#part-2)
+    - [Introduction](#introduction)
+      - [Purpose](#purpose)
+      - [Method of conversion](#method-of-conversion)
+    - [Premise 1](#premise-1)
+    - [Premise 2](#premise-2)
+    - [Premise 3](#premise-3)
+    - [Premise 4](#premise-4)
+    - [Premise 5](#premise-5)
+    - [Premise 6](#premise-6)
+    - [Finalised premises (before standardising variables)](#finalised-premises-before-standardising-variables)
+  - [Part 3](#part-3)
+  - [Part 4](#part-4)
+    - [Expression pool](#expression-pool)
+    - [Unstandardised clauses](#unstandardised-clauses)
+    - [Standardised clauses](#standardised-clauses)
+    - [Proof by resolution](#proof-by-resolution)
+
 ## Key points
 
 - $T$ stands for $True$; if $P$ is a given expression, $P=T$ means $P$ is true
@@ -59,38 +83,14 @@ $B(x)$, $O(x, y)$ and $H(x, y)$ can only hold true if $x$ is a person. In other 
 
 ## Part 1
 
-<table>
-	<thead>
-		<th>Premise ID</th>
-		<th width=600px>Premise expression</th>
-	</thead>
-	<tbody>
-        <tr>
-            <td>Premise 1</td>
-            <td>$\exists x \text{ } D(x) \land O(YOU, x)$</td>
-        </tr>
-        <tr>
-            <td>Premise 2</td>
-            <td>$B(ROBIN)$</td>
-        </tr>
-        <tr>
-            <td>Premise 3</td>
-            <td>$\forall p \text{ } \forall z \text{ } (\exists x \text{ } (R(x) \land O(p, x)) \text{ } \land \exists y \text{ } (R(y) \land C(z, y)) \rightarrow H(p, z))$</td>
-        </tr>
-        <tr>
-            <td>Premise 4</td>
-            <td>$\forall x \text{ } (D(x) \rightarrow \exists y \text{ } (R(y) \land C(x, y)))$</td>
-        </tr>
-        <tr>
-            <td>Premise 5</td>
-            <td>$\forall p \text{ } (B(p) \rightarrow \exists x \text{ } (O(p, x) \land (R(x) \lor G(x))))$</td>
-        </tr>
-        <tr>
-            <td>Premise 6</td>
-            <td>$\forall p \text{ } \forall q \text{ } (\exists x \text{ } (O(p, x) \land H(q, x)) \rightarrow \lnot W(q, p))$</td>
-        </tr>
-	</tbody>
-</table>
+|Premise ID|Premise expression|
+|--- |--- |
+|Premise 1|$\exists x \text{ } D(x) \land O(YOU, x)$|
+|Premise 2|$B(ROBIN)$|
+|Premise 3|$\forall p \text{ } \forall z \text{ } (\exists x \text{ } (R(x) \land O(p, x)) \text{ } \land \exists y \text{ } (R(y) \land C(z, y)) \rightarrow H(p, z))$|
+|Premise 4|$\forall x \text{ } (D(x) \rightarrow \exists y \text{ } (R(y) \land C(x, y)))$|
+|Premise 5|$\forall p \text{ } (B(p) \rightarrow \exists x \text{ } (O(p, x) \land (R(x) \lor G(x))))$|
+|Premise 6|$\forall p \text{ } \forall q \text{ } (\exists x \text{ } (O(p, x) \land H(q, x)) \rightarrow \lnot W(q, p))$| 
 
 **NOTE**: The above premises are logically consistent to each other, i.e. no premise contradicts one or more of the others.
 
@@ -176,42 +176,13 @@ Applying this as needed after dropping universals should be sufficient in obtain
 
 $\exists x \text{ } D(x) \land O(YOU, x)$
 
-<table>
-	<thead>
-		<tr>
-			<th width=50px>Step</th>
-			<th width=500px>Action</th>
-			<th>Remarks</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>RI</td>
-			<td>Nothing to do</td>
-			<td>No implications</td>
-		</tr>
-		<tr>
-			<td>MN</td>
-			<td>Nothing to do</td>
-			<td>No un-minimised negations</td>
-		</tr>
-		<tr>
-			<td>SE</td>
-			<td>$D(d) \land O(YOU, d)$</td>
-			<td>Applied skolem constant $d$</td>
-		</tr>
-		<tr>
-			<td>DU</td>
-			<td>Nothing to do</td>
-			<td>No universals</td>
-		</tr>
-		<tr>
-			<td>CNF</td>
-			<td>Nothing to do</td>
-			<td>Already in CNF</td>
-		</tr>
-	</tbody>
-</table>
+|Step|Action|Remarks|
+|--- |--- |--- |
+|RI|Nothing to do|No implications|
+|MN|Nothing to do|No un-minimised negations|
+|SE|$D(d) \land O(YOU, d)$|Applied skolem constant $d$|
+|DU|Nothing to do|No universals|
+|CNF|Nothing to do|Already in CNF|
 
 **Elaborating on remarks**:
 
@@ -221,140 +192,37 @@ $\exists x \text{ } D(x) \land O(YOU, x)$
 
 $B(ROBIN)$
 
-<table>
-	<thead>
-		<tr>
-			<th width=50px>Step</th>
-			<th width=500px>Action</th>
-			<th>Remarks</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>RI</td>
-			<td>Nothing to do</td>
-			<td>No implications</td>
-		</tr>
-		<tr>
-			<td>MN</td>
-			<td>Nothing to do</td>
-			<td>No un-minimised negations</td>
-		</tr>
-		<tr>
-			<td>SE</td>
-			<td>Nothing to do</td>
-			<td>No existentials</td>
-		</tr>
-		<tr>
-			<td>DU</td>
-			<td>Nothing to do</td>
-			<td>No universals</td>
-		</tr>
-		<tr>
-			<td>CNF</td>
-			<td>Nothing to do</td>
-			<td>Already in CNF</td>
-		</tr>
-	</tbody>
-</table>
+|Step|Action|Remarks|
+|--- |--- |--- |
+|RI|Nothing to do|No implications|
+|MN|Nothing to do|No un-minimised negations|
+|SE|Nothing to do|No existentials|
+|DU|Nothing to do|No universals|
+|CNF|Nothing to do|Already in CNF|
 
 ### Premise 3
 
 $\forall p \text{ } \forall z \text{ } (\exists x \text{ } (R(x) \land O(p, x)) \text{ } \land \exists y \text{ } (R(y) \land C(z, y)) \rightarrow H(p, z))$
 
-<table>
-	<thead>
-		<tr>
-			<th width=50px>Step</th>
-			<th width=500px>Action</th>
-			<th>Remarks</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>RI</td>
-			<td>
-				$\forall p \text{ } \forall z \text{ } (\lnot (\exists x \text{ } (R(y) \land O(p, y)) \text{ } \land \exists y \text{ } (R(y) \land C(z, y))) \lor H(p, z))$
-			</td>
-			<td>Applied $U \rightarrow V \equiv \lnot U \lor V$</td>
-		</tr>
-		<tr>
-			<td>MN</td>
-			<td>
-				$\forall p \text{ } \forall z \text{ } (\forall x \text{ } \lnot (R(x) \land O(p, x)) \lor \forall y \text{ } \lnot (R(y) \land C(z, y)) \lor H(p, z))$
-				<br>
-				$\equiv \forall p \text{ } \forall z \text{ } (\forall y \text{ } (\lnot R(x) \lor \lnot O(p, x)) \lor \forall y \text{ } (\lnot R(y) \lor \lnot C(z, y)) \lor H(p, z))$
-			</td>
-			<td>Applied De Morgan's law twice</td>
-		</tr>
-		<tr>
-			<td>SE</td>
-			<td>Nothing to do</td>
-			<td>No existentials</td>
-		</tr>
-		<tr>
-			<td>DU</td>
-			<td>
-				$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$
-			</td>
-			<td>Dropped universal quantifiers</td>
-		</tr>
-		<tr>
-			<td>CNF</td>
-			<td>Nothing to do</td>
-			<td>Already in CNF</td>
-		</tr>
-	</tbody>
-</table>
+|Step|Action|Remarks|
+|--- |--- |--- |
+|RI|$\forall p \text{ } \forall z \text{ } (\lnot (\exists x \text{ } (R(x) \land O(p, x)) \text{ } \land \exists y \text{ } (R(y) \land C(z, y))) \lor H(p, z))$|Applied $U \rightarrow V \equiv \lnot U \lor V$|
+|MN|$\forall p \text{ } \forall z \text{ } (\forall x \text{ } \lnot (R(x) \land O(p, x)) \lor \forall y \text{ } \lnot (R(y) \land C(z, y)) \lor H(p, z))$<br>$\equiv \forall p \text{ } \forall z \text{ } (\forall y \text{ } (\lnot R(x) \lor \lnot O(p, x)) \lor \forall y \text{ } (\lnot R(y) \lor \lnot C(z, y)) \lor H(p, z))$|Applied De Morgan's law twice|
+|SE|Nothing to do|No existentials|
+|DU|$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$|Dropped universal quantifiers|
+|CNF|Nothing to do|Already in CNF|
 
 ### Premise 4
 
 $\forall x \text{ } (D(x) \rightarrow \exists y \text{ } (R(y) \land C(x, y)))$
 
-<table>
-	<thead>
-		<tr>
-			<th width=50px>Step</th>
-			<th width=500px>Action</th>
-			<th>Remarks</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>RI</td>
-			<td>
-				$\forall x \text{ } (\lnot D(x) \lor \exists y \text{ } (R(y) \land C(x, y)))$
-			</td>
-			<td>Applied $U \rightarrow V \equiv \lnot U \lor V$</td>
-		</tr>
-		<tr>
-			<td>MN</td>
-			<td>Nothing to do</td>
-			<td>No un-minimised negations</td>
-		</tr>
-		<tr>
-			<td>SE</td>
-			<td>
-				$\forall x \text{ } (\lnot D(x) \lor (R(f_C(x)) \land C(x, f_C(x))))$
-			</td>
-			<td>Applied skolem function $f_C$</td>
-		</tr>
-		<tr>
-			<td>DU</td>
-			<td>
-				$\lnot D(x) \lor (R(f_C(x)) \land C(x, f_C(x)))$
-			</td>
-			<td>Dropped universal quantifiers</td>
-		</tr>
-		<tr>
-			<td>CNF</td>
-			<td>
-				$(\lnot D(x) \lor R(f_C(x))) \land (\lnot D(x) \lor C(x, f_C(x)))$
-			</td>
-			<td>Applied distributivity</td>
-		</tr>
-	</tbody>
-</table>
+|Step|Action|Remarks|
+|--- |--- |--- |
+|RI|$\forall x \text{ } (\lnot D(x) \lor \exists y \text{ } (R(y) \land C(x, y)))$|Applied $U \rightarrow V \equiv \lnot U \lor V$|
+|MN|Nothing to do|No un-minimised negations|
+|SE|$\forall x \text{ } (\lnot D(x) \lor (R(f_C(x)) \land C(x, f_C(x))))$|Applied skolem function $f_C$|
+|DU|$\lnot D(x) \lor (R(f_C(x)) \land C(x, f_C(x)))$|Dropped universal quantifiers|
+|CNF|$(\lnot D(x) \lor R(f_C(x))) \land (\lnot D(x) \lor C(x, f_C(x)))$|Applied distributivity|
 
 **Elaborating on remarks**:
 
@@ -376,51 +244,13 @@ Note that the above function definition is merely to more concretely interpret t
 
 $\forall p \text{ } (B(p) \rightarrow \exists x \text{ } ((R(x) \lor G(x)) \land O(p, x)))$
 
-<table>
-	<thead>
-		<tr>
-			<th width=50px>Step</th>
-			<th width=500px>Action</th>
-			<th>Remarks</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>RI</td>
-			<td>
-				$\forall p \text{ } (\lnot (B(p)) \lor \exists x \text{ } ((R(x) \lor G(x)) \land O(p, x)))$
-			</td>
-			<td>Applied $U \rightarrow V \equiv \lnot U \lor V$</td>
-		</tr>
-		<tr>
-			<td>MN</td>
-			<td>
-				$\forall p \text{ } ((\lnot B(p)) \lor \exists x \text{ } ((R(x) \lor G(x)) \land O(p, x)))$
-			</td>
-			<td>Applied De Morgan's law</td>
-		</tr>
-		<tr>
-			<td>SE</td>
-			<td>
-				$\forall p \text{ } ((\lnot B(p)) \lor ((R(f_O(p)) \lor G(f_O(p))) \land O(p, f_O(p))))$
-			</td>
-			<td>Applied skolem function $f_O$</td>
-		</tr>
-		<tr>
-			<td>DU</td>
-			<td>
-				$(\lnot B(p)) \lor ((R(f_O(p)) \lor G(f_O(p))) \land O(p, f_O(p)))$
-			</td>
-			<td>Dropped universal quantifiers</td>
-		</tr>
-		<td>CNF</td>
-			<td>
-				$(\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p))) \land (\lnot B(p) \lor O(p, f_O(p)))$
-			</td>
-			<td>Applied distributivity</td>
-		</tr>
-	</tbody>
-</table>
+|Step|Action|Remarks|
+|--- |--- |--- |
+|RI|$\forall p \text{ } (\lnot (B(p)) \lor \exists x \text{ } ((R(x) \lor G(x)) \land O(p, x)))$|Applied $U \rightarrow V \equiv \lnot U \lor V$|
+|MN|$\forall p \text{ } ((\lnot B(p)) \lor \exists x \text{ } ((R(x) \lor G(x)) \land O(p, x)))$|Applied De Morgan's law|
+|SE|$\forall p \text{ } ((\lnot B(p)) \lor ((R(f_O(p)) \lor G(f_O(p))) \land O(p, f_O(p))))$|Applied skolem function $f_O$|
+|DU|$(\lnot B(p)) \lor ((R(f_O(p)) \lor G(f_O(p))) \land O(p, f_O(p)))$|Dropped universal quantifiers|
+|CNF|$(\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p))) \land (\lnot B(p) \lor O(p, f_O(p)))$|Applied distributivity|
 
 **Elaborating on remarks**:
 
@@ -440,89 +270,26 @@ Note that the above function definition is merely to more concretely interpret t
 
 ### Premise 6
 
-$\forall p \text{ } \forall q \text{ } (P(p) \land P(q) \land \exists x \text{ } (O(p, x) \land H(q, x)) \rightarrow \lnot W(q, p))$
+$\forall p \text{ } \forall q \text{ } (\exists x \text{ } (O(p, x) \land H(q, x)) \rightarrow \lnot W(q, p))$
 
-<table>
-	<thead>
-		<tr>
-			<th width=50px>Step</th>
-			<th width=500px>Action</th>
-			<th>Remarks</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>RI</td>
-			<td>
-				$\forall p \text{ } \forall q \text{ } (\lnot(\exists x \text{ } (O(p, x) \land H(q, x))) \lor \lnot W(q, p))$
-			</td>
-			<td>Applied $U \rightarrow V \equiv \lnot U \lor V$</td>
-		</tr>
-		<tr>
-			<td>MN</td>
-			<td>
-				$\forall p \text{ } \forall q \text{ } (\forall x \text{ } \lnot (O(p, x) \land H(q, x))) \lor \lnot W(q, p))$
-				<br>
-				$\equiv \forall p \text{ } \forall q \text{ } (\forall x \text{ } (\lnot O(p, x) \lor \lnot H(q, x)) \lor \lnot W(q, p))$
-			</td>
-			<td>Applied De Morgan's law twice</td>
-		</tr>
-		<tr>
-			<td>SE</td>
-			<td>Nothing to do</td>
-			<td>No existentials</td>
-		</tr>
-		<tr>
-			<td>DU</td>
-			<td>
-				$(\lnot O(p, x) \lor \lnot H(q, x)) \lor \lnot W(q, p)$
-				<br>
-				$\equiv \lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$
-			</td>
-			<td>1. Dropped universal quantifiers<br>2. Removed extra parantheses</td>
-		</tr>
-		<tr>
-			<td>CNF</td>
-			<td>Nothing to do</td>
-			<td>Already in CNF</td>
-		</tr>
-	</tbody>
-</table>
+|Step|Action|Remarks|
+|--- |--- |--- |
+|RI|$\forall p \text{ } \forall q \text{ } (\lnot(\exists x \text{ } (O(p, x) \land H(q, x))) \lor \lnot W(q, p))$|Applied $U \rightarrow V \equiv \lnot U \lor V$|
+|MN|$\forall p \text{ } \forall q \text{ } (\forall x \text{ } \lnot (O(p, x) \land H(q, x))) \lor \lnot W(q, p)$<br>$\equiv \forall p \text{ } \forall q \text{ } (\forall x \text{ } (\lnot O(p, x) \lor \lnot H(q, x)) \lor \lnot W(q, p))$|Applied De Morgan's law twice|
+|SE|Nothing to do|No existentials|
+|DU|$(\lnot O(p, x) \lor \lnot H(q, x)) \lor \lnot W(q, p)$<br>$\equiv \lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$|1. Dropped universal quantifiers<br>2. Removed extra parantheses|
+|CNF|Nothing to do|Already in CNF|
 
 ### Finalised premises (before standardising variables)
 
-<table>
-	<thead>
-		<th>Premise ID</th>
-		<th width=600px>Premise expression</th>
-	</thead>
-	<tbody>
-        <tr>
-            <td>Premise 1</td>
-            <td>$D(d) \land O(YOU, d)$</td>
-        </tr>
-        <tr>
-            <td>Premise 2</td>
-            <td>$B(ROBIN)$</td>
-        </tr>
-        <tr>
-            <td>Premise 3</td>
-            <td>$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$</td>
-        </tr>
-        <tr>
-            <td>Premise 4</td>
-            <td>$(\lnot D(x) \lor R(f_C(x))) \land (\lnot D(x) \lor C(x, f_C(x)))$</td>
-        </tr>
-        <tr>
-            <td>Premise 5</td>
-            <td>$(\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p)))\land (\lnot B(p) \lor O(p, f_O(p)))$</td>
-        </tr>
-        <tr>
-            <td>Premise 6</td>
-            <td>$\lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$</td>
-        </tr>
-	</tbody>
-</table>
+|Premise ID|Premise expression|
+|--- |--- |
+|Premise 1|$D(d) \land O(YOU, d)$|
+|Premise 2|$B(ROBIN)$|
+|Premise 3|$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$|
+|Premise 4|$(\lnot D(x) \lor R(f_C(x))) \land (\lnot D(x) \lor C(x, f_C(x)))$|
+|Premise 5|$(\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p)))\land (\lnot B(p) \lor O(p, f_O(p)))$|
+|Premise 6|$\lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$|
 
 ## Part 3
 
@@ -536,46 +303,13 @@ $\lnot(\forall x \text{ } (\lnot(G(x) \land O(ROBIN, x)) \rightarrow \lnot W(ROB
 
 Converting the above to CNF:
 
-<table>
-	<thead>
-		<tr><th width=50px></th><th width=500px></th></tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>RI</td>
-			<td>
-				$\lnot(\lnot(\forall x \text{ } \lnot (G(x) \land O(ROBIN, x))) \lor \lnot W(ROBIN, YOU))$
-			</td>
-			<td>Applied $U \rightarrow V \equiv \lnot U \lor V$</td>
-		</tr>
-		<tr>
-			<td>MN</td>
-			<td>
-				$\forall x \text{ } \lnot (G(x) \land O(ROBIN, x)) \land W(ROBIN, YOU)$
-				<br>
-				$\equiv \forall x \text{ } (\lnot G(x) \lor \lnot O(ROBIN, x)) \land W(ROBIN, YOU)$
-			</td>
-			<td>1. Removed double negatives<br>2. Applied De Morgan's law</td>
-		</tr>
-		<tr>
-			<td>SE</td>
-			<td>Nothing to do</td>
-			<td>No existentials</td>
-		</tr>
-		<tr>
-			<td>DU</td>
-			<td>
-				$(\lnot G(x) \lor \lnot O(ROBIN, x)) \land W(ROBIN, YOU)$
-			</td>
-			<td>Dropped universal quantifiers</td>
-		</tr>
-		<tr>
-			<td>CNF</td>
-			<td>Nothing to do</td>
-			<td>Already in CNF</td>
-		</tr>
-	</tbody>
-</table>
+|Step|Action|Remarks|
+|--- |--- |--- |
+|RI|$\lnot(\lnot(\forall x \text{ } \lnot (G(x) \land O(ROBIN, x))) \lor \lnot W(ROBIN, YOU))$|Applied $U \rightarrow V \equiv \lnot U \lor V$|
+|MN|$\forall x \text{ } \lnot (G(x) \land O(ROBIN, x)) \land W(ROBIN, YOU)$<br>$\equiv \forall x \text{ } (\lnot G(x) \lor \lnot O(ROBIN, x)) \land W(ROBIN, YOU)$|1. Removed double negatives<br>2. Applied De Morgan's law|
+|SE|Nothing to do|No existentials|
+|DU|$(\lnot G(x) \lor \lnot O(ROBIN, x)) \land W(ROBIN, YOU)$|Dropped universal quantifiers|
+|CNF|Nothing to do|Already in CNF|
 
 ## Part 4
 
@@ -587,176 +321,47 @@ We must first separate the disjuctive clauses from the conjuctive expressions (i
 
 For reference, we must draw clauses from the following:
 
-<table>
-	<thead>
-		<th>Source ID</th>
-		<th width=600px>Source expression</th>
-	</thead>
-	<tbody>
-        <tr>
-            <td>Premise 1</td>
-            <td>$D(d) \land O(YOU, d)$</td>
-        </tr>
-        <tr>
-            <td>Premise 2</td>
-            <td>$B(ROBIN)$</td>
-        </tr>
-        <tr>
-            <td>Premise 3</td>
-            <td>$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$</td>
-        </tr>
-        <tr>
-            <td>Premise 4</td>
-            <td>$(\lnot D(x) \lor R(f_C(x))) \land (\lnot D(x) \lor C(x, f_C(x)))$</td>
-        </tr>
-        <tr>
-            <td>Premise 5</td>
-            <td>$(\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p)))\land (\lnot P(p) \lor \lnot B(p) \lor O(p, f_O(p)))$</td>
-        </tr>
-        <tr>
-            <td>Premise 6</td>
-            <td>$\lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$</td>
-        </tr>
-        <tr>
-            <td>Negated conclusion</td>
-            <td>$(\lnot G(x) \lor \lnot O(ROBIN, x)) \land (W(ROBIN, YOU))$</td>
-        </tr>
-	</tbody>
-</table>
+Source ID|Source expression|
+|--- |--- |
+|Premise 1|$D(d) \land O(YOU, d)$|
+|Premise 2|$B(ROBIN)$|
+|Premise 3|$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$|
+|Premise 4|$(\lnot D(x) \lor R(f_C(x))) \land (\lnot D(x) \lor C(x, f_C(x)))$|
+|Premise 5|$(\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p)))\land (\lnot P(p) \lor \lnot B(p) \lor O(p, f_O(p)))$|
+|Premise 6|$\lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$|
+|Negated conclusion|$(\lnot G(x) \lor \lnot O(ROBIN, x)) \land (W(ROBIN, YOU))$|
 
 ### Unstandardised clauses
 
-<table>
-	<thead>
-		<th>ID</th>
-		<th width=600px>Clause</th>
-		<th>Source ID</th>
-	</thead>
-	<tbody>
-        <tr>
-            <td>01</td>
-            <td>$D(d)$</td>
-            <td>Premise 1</td>
-        </tr>
-				<tr>
-            <td>02</td>
-            <td>$O(YOU, d)$</td>
-            <td>Premise 1</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>$B(ROBIN)$</td>
-            <td>Premise 2</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$</td>
-            <td>Premise 3</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>$\lnot D(x) \lor R(f_C(x))$</td>
-            <td>Premise 4</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>$\lnot D(x) \lor C(x, f_C(x))$</td>
-            <td>Premise 4</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>$\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p))$</td>
-            <td>Premise 5</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>$\lnot B(p) \lor O(p, f_O(p))$</td>
-            <td>Premise 5</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>$\lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$</td>
-            <td>Premise 6</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>$\lnot G(x) \lor \lnot O(ROBIN, x)$</td>
-            <td>Negated conclusion</td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>$W(ROBIN, YOU)$</td>
-            <td>Negated conclusion</td>
-        </tr>
-	</tbody>
-</table>
+|ID|Clause|Source ID|
+|--- |--- |--- |
+|01|$D(d)$|Premise 1|
+|02|$O(YOU, d)$|Premise 1|
+|03|$B(ROBIN)$|Premise 2|
+|04|$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$|Premise 3|
+|05|$\lnot D(x) \lor R(f_C(x))$|Premise 4|
+|06|$\lnot D(x) \lor C(x, f_C(x))$|Premise 4|
+|07|$\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p))$|Premise 5|
+|08|$\lnot B(p) \lor O(p, f_O(p))$|Premise 5|
+|09|$\lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$|Premise 6|
+|10|$\lnot G(x) \lor \lnot O(ROBIN, x)$|Negated conclusion|
+|11|$W(ROBIN, YOU)$|Negated conclusion|
 
 ### Standardised clauses
 
-<table>
-	<thead>
-		<th>ID</th>
-		<th width=600px>Clause</th>
-		<th>Source ID</th>
-	</thead>
-	<tbody>
-        <tr>
-            <td>01</td>
-            <td>$D(d)$</td>
-            <td>Premise 1</td>
-        </tr>
-				<tr>
-            <td>02</td>
-            <td>$O(YOU, d)$</td>
-            <td>Premise 1</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>$B(ROBIN)$</td>
-            <td>Premise 2</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>$\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot R(x_3) \lor \lnot C(x_4, x_3) \lor H(x_2, x_4)$</td>
-            <td>Premise 3</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>$\lnot D(x_5) \lor R(f_C(x_5))$</td>
-            <td>Premise 4</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>$\lnot D(x_6) \lor C(x_6, f_C(x_6))$</td>
-            <td>Premise 4</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>$\lnot B(x_7) \lor R(f_O(x_7)) \lor G(f_O(x_7))$</td>
-            <td>Premise 5</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>$\lnot B(x_8) \lor O(x_8, f_O(x_8))$</td>
-            <td>Premise 5</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>$\lnot O(x_9, x_{10}) \lor \lnot H(x_{11}, x_{10}) \lor \lnot W(x_{11}, x_9)$</td>
-            <td>Premise 6</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>$\lnot G(x_{12}) \lor \lnot O(ROBIN, x_{12})$</td>
-            <td>Negated conclusion</td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>$W(ROBIN, YOU)$</td>
-            <td>Negated conclusion</td>
-        </tr>
-	</tbody>
-</table>
+|ID|Clause|Source ID|
+|--- |--- |--- |
+|01|$D(d)$|Premise 1|
+|02|$O(YOU, d)$|Premise 1|
+|03|$B(ROBIN)$|Premise 2|
+|04|$\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot R(x_3) \lor \lnot C(x_4, x_3) \lor H(x_2, x_4)$|Premise 3|
+|05|$\lnot D(x_5) \lor R(f_C(x_5))$|Premise 4|
+|06|$\lnot D(x_6) \lor C(x_6, f_C(x_6))$|Premise 4|
+|07|$\lnot B(x_7) \lor R(f_O(x_7)) \lor G(f_O(x_7))$|Premise 5|
+|08|$\lnot B(x_8) \lor O(x_8, f_O(x_8))$|Premise 5|
+|09|$\lnot O(x_9, x_{10}) \lor \lnot H(x_{11}, x_{10}) \lor \lnot W(x_{11}, x_9)$|Premise 6|
+|10|$\lnot G(x_{12}) \lor \lnot O(ROBIN, x_{12})$|Negated conclusion|
+|11|$W(ROBIN, YOU)$|Negated conclusion|
 
 ### Proof by resolution
 
@@ -786,156 +391,18 @@ For the following proof, we have mainly used unification and resolution. Note th
 
 ---
 
-<table style="border=1px solid black">
-	<thead>
-		<th>ID</th>
-		<th>Clauses</th>
-		<th width=210px>Unifier</th>
-		<td width=700>Result</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>14</td>
-			<td>{07, 10}</td>
-			<td>{ $f_O(x_7)/x_{12}$, $ROBIN/x_7$ }</td>
-			<td>
-				Unified clauses:<br>
-			  07: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor G(f_O(ROBIN))$
-				<br>
-				10: $\lnot G(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$
-				<br><br>
-				Resolution:<br>
-				14: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$
-			</td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>{04, 05}</td>
-			<td>{ $x_4/x_5$, $f_C(x_4)/x_3$ }</td>
-			<td>
-				Unified clauses:<br>
-				04: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot R(f_C(x_4)) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4)$
-				<br>
-				05: $\lnot D(x_4) \lor R(f_C(x_4))$
-				<br><br>
-				Resolution:<br>
-				15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$
-			</td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td>{06, 15}</td>
-			<td>{ $x_4/x_6$ }</td>
-			<td>
-				Unified clauses:<br>
-				06: $\lnot D(x_4) \lor C(x_4, f_C(x_4))$
-				<br>
-				15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$
-				<br><br>
-				Resolution:<br>
-				16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor H(x_2, x_4) \lor \lnot D(x_4)$
-			</td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td>{09, 16}</td>
-			<td>{ $x_2/x_{11}$, $x_4/x_{10}$ }</td>
-			<td>
-				Unified clauses:<br>
-				09: $\lnot O(x_9, x_{10}) \lor \lnot H(x_2, x_4) \lor \lnot W(x_4, x_9)$
-				<br>
-				16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$
-				<br><br>
-				Resolution:<br>
-				17: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(x_2, x_9)$
-			</td>
-		</tr>
-		<tr>
-			<td>18</td>
-			<td>{14, 17}</td>
-			<td>{ $f_O(x_2)/x_1$, $ROBIN/x_2$ }</td>
-			<td>
-				Unified clauses:<br>
-				14: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$
-				<br>
-				17: $\lnot R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9)$
-				<br><br>
-				Resolution:<br>
-				18: $\lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$
-			</td>
-		</tr>
-		<tr>
-			<td>19</td>
-			<td>{08, 18}</td>
-			<td>{ $ROBIN/x_8$ }</td>
-			<td>
-				Unified clauses:<br>
-				08: $\lnot B(ROBIN) \lor O(ROBIN, f_O(ROBIN))$
-				<br>
-				18: $\lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$
-				<br><br>
-				Resolution:<br>
-				19: $\lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$
-			</td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>{01, 19}</td>
-			<td>{ $d/x_4$ }</td>
-			<td>
-				Unified clauses:<br>
-				01: $D(d)$
-				<br>
-				19: $\lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$
-				<br><br>
-				Resolution:<br>
-				20: $\lnot O(x_9, d) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$
-			</td>
-		</tr>
-		<tr>
-			<td>21</td>
-			<td>{02, 20}</td>
-			<td>{ $YOU/x_9$ }</td>
-			<td>
-				Unified clauses:<br>
-				02: $O(YOU, d)$
-				<br>
-				20: $\lnot O(YOU, d) \lor \lnot W(ROBIN, YOU) \lor \lnot B(ROBIN)$
-				<br><br>
-				Resolution:<br>
-				21: $\lnot W(ROBIN, YOU) \lor \lnot B(ROBIN)$
-			</td>
-		</tr>
-		<tr>
-			<td>22</td>
-			<td>{11, 21}</td>
-			<td>None</td>
-			<td>
-				Unified clauses:<br>
-				11: $W(ROBIN, YOU)$
-				<br>
-				21: $\lnot W(ROBIN, YOU) \lor \lnot B(ROBIN)$
-				<br><br>
-				Resolution:<br>
-				22: $\lnot B(ROBIN)$
-			</td>
-		</tr>
-		<tr>
-			<td>23</td>
-			<td>{03, 22}</td>
-			<td>None</td>
-			<td>
-				Unified clauses:<br>
-				11: $B(ROBIN)$
-				<br>
-				21: $\lnot B(ROBIN)$
-				<br><br>
-				Resolution:<br>
-				22: { $\text { }$ }
-			</td>
-		</tr>
-	</tbody>
-</table>
+|ID|Clauses|Unifier|Result|
+|--- |--- |------ |--------- |
+|14|{07, 10}|{ $f_O(x_7)/x_{12}$, $ROBIN/x_7$ }|Unified clauses:<br>07: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor G(f_O(ROBIN))$<br>10: $\lnot G(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$<br><br>Resolution:<br>14: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$|
+|15|{04, 05}|{ $x_4/x_5$, $f_C(x_4)/x_3$ }|Unified clauses:<br>04: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot R(f_C(x_4)) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4)$<br>05: $\lnot D(x_4) \lor R(f_C(x_4))$<br><br>Resolution:<br>15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$|
+|16|{06, 15}|{ $x_4/x_6$ }|Unified clauses:<br>06: $\lnot D(x_4) \lor C(x_4, f_C(x_4))$<br>15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$<br><br>Resolution:<br>16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor H(x_2, x_4) \lor \lnot D(x_4)$|
+|17|{09, 16}|{ $x_2/x_{11}$, $x_4/x_{10}$ }|Unified clauses:<br>09: $\lnot O(x_9, x_{10}) \lor \lnot H(x_2, x_4) \lor \lnot W(x_4, x_9)$<br>16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$<br><br>Resolution:<br>17: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(x_2, x_9)$|
+|18|{14, 17}|{ $f_O(x_2)/x_1$, $ROBIN/x_2$ }|Unified clauses:<br>14: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$<br>17: $\lnot R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9)$<br><br>Resolution:<br>18: $\lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
+|19|{08, 18}|{ $ROBIN/x_8$ }|Unified clauses:<br>08: $\lnot B(ROBIN) \lor O(ROBIN, f_O(ROBIN))$<br>18: $\lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>19: $\lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
+|20|{01, 19}|{ $d/x_4$ }|Unified clauses:<br>01: $D(d)$<br>19: $\lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>20: $\lnot O(x_9, d) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
+|21|{02, 20}|{ $YOU/x_9$ }|Unified clauses:<br>02: $O(YOU, d)$<br>20: $\lnot O(YOU, d) \lor \lnot W(ROBIN, YOU) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>21: $\lnot W(ROBIN, YOU) \lor \lnot B(ROBIN)$|
+|22|{11, 21}|None|Unified clauses:<br>11: $W(ROBIN, YOU)$<br>21: $\lnot W(ROBIN, YOU) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>22: $\lnot B(ROBIN)$|
+|23|{03, 22}|None|Unified clauses:<br>11: $B(ROBIN)$<br>21: $\lnot B(ROBIN)$<br><br>Resolution:<br>22: { $\text { }$ }|
 
 **NOTE**: Factoring was used for resolution 19, where repetitions of $\lnot B(ROBIN)$ were removed.
 
