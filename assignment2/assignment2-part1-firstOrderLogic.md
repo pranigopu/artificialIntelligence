@@ -1,3 +1,8 @@
+<style>
+    * {font-family: "Times New Roman"}
+    p, ul, ol {font-size: 20px}
+</style>
+
 # ECS759P: _Artificial Intelligence_<br>Assignment 2, Question 1
 
 - [ECS759P: _Artificial Intelligence_Assignment 2, Question 1](#ecs759p-artificial-intelligenceassignment-2-question-1)
@@ -84,7 +89,7 @@ $B(x)$, $O(x, y)$ and $H(x, y)$ can only hold true if $x$ is a person. In other 
 ## Part 1
 
 |Premise ID|Premise expression|
-|--- |--- |
+|--- |------ |
 |Premise 1|$\exists x \text{ } D(x) \land O(YOU, x)$|
 |Premise 2|$B(ROBIN)$|
 |Premise 3|$\forall p \text{ } \forall z \text{ } (\exists x \text{ } (R(x) \land O(p, x)) \text{ } \land \exists y \text{ } (R(y) \land C(z, y)) \rightarrow H(p, z))$|
