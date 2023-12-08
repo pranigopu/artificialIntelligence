@@ -1,33 +1,27 @@
-<style>
-    * {font-family: "Times New Roman"}
-    p, ul, ol {font-size: 20px}
-</style>
-
 # ECS759P: _Artificial Intelligence_<br>Assignment 2, Question 1
 
-- [ECS759P: _Artificial Intelligence_Assignment 2, Question 1](#ecs759p-artificial-intelligenceassignment-2-question-1)
-  - [Key points](#key-points)
-  - [Statements \& conclusion](#statements--conclusion)
-  - [Interpretations of certain words \& phrases](#interpretations-of-certain-words--phrases)
-  - [Initialising knowledge base](#initialising-knowledge-base)
-  - [Part 1](#part-1)
-  - [Part 2](#part-2)
-    - [Introduction](#introduction)
-      - [Purpose](#purpose)
-      - [Method of conversion](#method-of-conversion)
-    - [Premise 1](#premise-1)
-    - [Premise 2](#premise-2)
-    - [Premise 3](#premise-3)
-    - [Premise 4](#premise-4)
-    - [Premise 5](#premise-5)
-    - [Premise 6](#premise-6)
-    - [Finalised premises (before standardising variables)](#finalised-premises-before-standardising-variables)
-  - [Part 3](#part-3)
-  - [Part 4](#part-4)
-    - [Expression pool](#expression-pool)
-    - [Unstandardised clauses](#unstandardised-clauses)
-    - [Standardised clauses](#standardised-clauses)
-    - [Proof by resolution](#proof-by-resolution)
+- [Key points](#key-points)
+- [Statements \& conclusion](#statements--conclusion)
+- [Interpretations of certain words \& phrases](#interpretations-of-certain-words--phrases)
+- [Initialising knowledge base](#initialising-knowledge-base)
+- [Part 1](#part-1)
+- [Part 2](#part-2)
+	- [Introduction](#introduction)
+	- [Purpose](#purpose)
+	- [Method of conversion](#method-of-conversion)
+	- [Premise 1](#premise-1)
+	- [Premise 2](#premise-2)
+	- [Premise 3](#premise-3)
+	- [Premise 4](#premise-4)
+	- [Premise 5](#premise-5)
+	- [Premise 6](#premise-6)
+	- [Finalised premises (before standardising variables)](#finalised-premises-before-standardising-variables)
+- [Part 3](#part-3)
+- [Part 4](#part-4)
+	- [Expression pool](#expression-pool)
+	- [Unstandardised clauses](#unstandardised-clauses)
+	- [Standardised clauses](#standardised-clauses)
+	- [Proof by resolution](#proof-by-resolution)
 
 ## Key points
 
