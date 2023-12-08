@@ -1,7 +1,7 @@
 # Artificial intelligence
 This repository records the lab work done in the artificial intelligence course of my master's in AI degree.
 
-## Lab sessions
+## Contents
 - Lab 1: Python basics
   - Formatting strings
   - List comprehension
