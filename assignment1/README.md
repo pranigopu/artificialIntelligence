@@ -16,4 +16,4 @@ The line cost is considered as follows:
 - If no line change occurs, do the usual cost evaluation
 - If line change occurs, add 2 to the usual cost evaluation
 
-Although this is implied in the code and comments, it was still not adequately clear in the section this question needed to be addressed.
+Although this is implied in the code and comments, it is still not adequately clear in the section where this question needs to be addressed.
