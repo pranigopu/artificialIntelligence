@@ -1,23 +1,28 @@
 # ECS759P: _Artificial Intelligence_<br>Assignment 2, Question 1
 
+- **Student name**: Pranav Narendra Gopalkrishna
+- **Student number**: 231052045
+
+## Table of contents
+
 - [Key points](#key-points)
 - [Statements \& conclusion](#statements--conclusion)
 - [Interpretations of certain words \& phrases](#interpretations-of-certain-words--phrases)
 - [Initialising knowledge base](#initialising-knowledge-base)
-- [Part 1](#part-1)
-- [Part 2](#part-2)
+- [Part 1: Converting statements to first-order logic (FOL) expressions](#part-1-converting-statements-to-first-order-logic-fol-expressions)
+- [Part 2: Converting FOL expressions to conjunctive normal form (CNF)](#part-2-converting-fol-expressions-to-conjunctive-normal-form-cnf)
 	- [Introduction](#introduction)
 	- [Purpose](#purpose)
-	- [Method of conversion](#method-of-conversion)
+ 	- [Method of conversion](#method-of-conversion)
 	- [Premise 1](#premise-1)
 	- [Premise 2](#premise-2)
 	- [Premise 3](#premise-3)
 	- [Premise 4](#premise-4)
 	- [Premise 5](#premise-5)
 	- [Premise 6](#premise-6)
-	- [Finalised premises (before standardising variables)](#finalised-premises-before-standardising-variables)
-- [Part 3](#part-3)
-- [Part 4](#part-4)
+	- [Finalised premises (after converting to CNF)](#finalised-premises-after-converting-to-cnf)
+- [Part 3: Formulating, negating \& converting the conclusion](#part-3-formulating-negating--converting-the-conclusion)
+- [Part 4: Proof by resolution](#part-4-proof-by-resolution)
 	- [Expression pool](#expression-pool)
 	- [Unstandardised clauses](#unstandardised-clauses)
 	- [Standardised clauses](#standardised-clauses)
@@ -80,7 +85,7 @@ $B(x)$, $O(x, y)$ and $H(x, y)$ can only hold true if $x$ is a person. In other 
 - $ROBIN$: Denotes the person named "Robin"
 - $YOU$: Denotes the person that is you
 
-## Part 1
+## Part 1: Converting statements to first-order logic (FOL) expressions
 
 |Premise ID|Premise expression|
 |--- |------ |
@@ -93,9 +98,7 @@ $B(x)$, $O(x, y)$ and $H(x, y)$ can only hold true if $x$ is a person. In other 
 
 **NOTE**: The above premises are logically consistent to each other, i.e. no premise contradicts one or more of the others.
 
-## Part 2
-
-Now, we shall be transforming the statements to conjunctive normal form (CNF), i.e. a conjunction of disjunctions (i.e. "AND of OR's").
+## Part 2: Converting FOL expressions to conjunctive normal form (CNF)
 
 ### Introduction
 
@@ -279,7 +282,7 @@ $\forall p \text{ } \forall q \text{ } (\exists x \text{ } (O(p, x) \land H(q, x
 |DU|$(\lnot O(p, x) \lor \lnot H(q, x)) \lor \lnot W(q, p)$<br>$\equiv \lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$|1. Dropped universal quantifiers<br>2. Removed extra parantheses|
 |CNF|Nothing to do|Already in CNF|
 
-### Finalised premises (before standardising variables)
+### Finalised premises (after converting to CNF)
 
 |Premise ID|Premise expression|
 |--- |--- |
@@ -290,7 +293,7 @@ $\forall p \text{ } \forall q \text{ } (\exists x \text{ } (O(p, x) \land H(q, x
 |Premise 5|$(\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p)))\land (\lnot B(p) \lor O(p, f_O(p)))$|
 |Premise 6|$\lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$|
 
-## Part 3
+## Part 3: Formulating, negating & converting the conclusion
 
 First-order logic formulation of the conclusion:
 
@@ -310,7 +313,7 @@ Converting the above to CNF:
 |DU|$(\lnot G(x) \lor \lnot O(ROBIN, x)) \land W(ROBIN, YOU)$|Dropped universal quantifiers|
 |CNF|Nothing to do|Already in CNF|
 
-## Part 4
+## Part 4: Proof by resolution
 
 Proof by resolution is one where, given that the premises are true, we assume the negative of the conclusion is true and look for a contradiction. If we find the contradiction, we know that the negative of the conclusion is false, thus proving the conclusion itself. We will know that a contradiction exists if any two or more of the disjoint clauses from all the CNF statements (including the negated conclusion) resolve to an empty set. Such a resolution means that every term of at least one clause is contradicted at some point, thereby canceling out.
 
@@ -395,7 +398,7 @@ For the following proof, we have mainly used unification and resolution. Note th
 |14|{07, 10}|{ $f_O(x_7)/x_{12}$, $ROBIN/x_7$ }|Unified clauses:<br>07: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor G(f_O(ROBIN))$<br>10: $\lnot G(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$<br><br>Resolution:<br>14: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$|
 |15|{04, 05}|{ $x_4/x_5$, $f_C(x_4)/x_3$ }|Unified clauses:<br>04: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot R(f_C(x_4)) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4)$<br>05: $\lnot D(x_4) \lor R(f_C(x_4))$<br><br>Resolution:<br>15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$|
 |16|{06, 15}|{ $x_4/x_6$ }|Unified clauses:<br>06: $\lnot D(x_4) \lor C(x_4, f_C(x_4))$<br>15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$<br><br>Resolution:<br>16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor H(x_2, x_4) \lor \lnot D(x_4)$|
-|17|{09, 16}|{ $x_2/x_{11}$, $x_4/x_{10}$ }|Unified clauses:<br>09: $\lnot O(x_9, x_{10}) \lor \lnot H(x_2, x_4) \lor \lnot W(x_4, x_9)$<br>16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$<br><br>Resolution:<br>17: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(x_2, x_9)$|
+|17|{09, 16}|{ $x_2/x_{11}$, $x_4/x_{10}$ }|Unified clauses:<br>09: $\lnot O(x_9, x_{10}) \lor \lnot H(x_2, x_4) \lor \lnot W(x_4, x_9)$<br>16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor H(x_2, x_4) \lor \lnot D(x_4)$<br><br>Resolution:<br>17: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(x_2, x_9)$|
 |18|{14, 17}|{ $f_O(x_2)/x_1$, $ROBIN/x_2$ }|Unified clauses:<br>14: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$<br>17: $\lnot R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9)$<br><br>Resolution:<br>18: $\lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
 |19|{08, 18}|{ $ROBIN/x_8$ }|Unified clauses:<br>08: $\lnot B(ROBIN) \lor O(ROBIN, f_O(ROBIN))$<br>18: $\lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>19: $\lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
 |20|{01, 19}|{ $d/x_4$ }|Unified clauses:<br>01: $D(d)$<br>19: $\lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>20: $\lnot O(x_9, d) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
