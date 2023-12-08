@@ -1,3 +1,9 @@
+<style>
+    * {font-family: "Times New Roman"}
+    p, ul, ol {font-size: 24px}
+    th, td {font-size: 20px}
+</style>
+
 # ECS759P: _Artificial Intelligence_<br>Assignment 2, Question 1
 
 - **Student name**: Pranav Narendra Gopalkrishna
@@ -11,22 +17,22 @@
 - [Initialising knowledge base](#initialising-knowledge-base)
 - [Part 1: Converting statements to first-order logic (FOL) expressions](#part-1-converting-statements-to-first-order-logic-fol-expressions)
 - [Part 2: Converting FOL expressions to conjunctive normal form (CNF)](#part-2-converting-fol-expressions-to-conjunctive-normal-form-cnf)
-	- [Introduction](#introduction)
-	- [Purpose](#purpose)
- 	- [Method of conversion](#method-of-conversion)
-	- [Premise 1](#premise-1)
-	- [Premise 2](#premise-2)
-	- [Premise 3](#premise-3)
-	- [Premise 4](#premise-4)
-	- [Premise 5](#premise-5)
-	- [Premise 6](#premise-6)
-	- [Finalised premises (after converting to CNF)](#finalised-premises-after-converting-to-cnf)
+  - [Introduction](#introduction)
+    - [Purpose](#purpose)
+    - [Method of conversion](#method-of-conversion)
+  - [Premise 1](#premise-1)
+  - [Premise 2](#premise-2)
+  - [Premise 3](#premise-3)
+  - [Premise 4](#premise-4)
+  - [Premise 5](#premise-5)
+  - [Premise 6](#premise-6)
+  - [Finalised premises (after converting to CNF)](#finalised-premises-after-converting-to-cnf)
 - [Part 3: Formulating, negating \& converting the conclusion](#part-3-formulating-negating--converting-the-conclusion)
 - [Part 4: Proof by resolution](#part-4-proof-by-resolution)
-	- [Expression pool](#expression-pool)
-	- [Unstandardised clauses](#unstandardised-clauses)
-	- [Standardised clauses](#standardised-clauses)
-	- [Proof by resolution](#proof-by-resolution)
+  - [Expression pool](#expression-pool)
+  - [Unstandardised clauses](#unstandardised-clauses)
+  - [Standardised clauses](#standardised-clauses)
+  - [Proof by resolution](#proof-by-resolution)
 
 ## Key points
 
@@ -211,7 +217,7 @@ $\forall p \text{ } \forall z \text{ } (\exists x \text{ } (R(x) \land O(p, x)) 
 |RI|$\forall p \text{ } \forall z \text{ } (\lnot (\exists x \text{ } (R(x) \land O(p, x)) \text{ } \land \exists y \text{ } (R(y) \land C(z, y))) \lor H(p, z))$|Applied $U \rightarrow V \equiv \lnot U \lor V$|
 |MN|$\forall p \text{ } \forall z \text{ } (\forall x \text{ } \lnot (R(x) \land O(p, x)) \lor \forall y \text{ } \lnot (R(y) \land C(z, y)) \lor H(p, z))$<br>$\equiv \forall p \text{ } \forall z \text{ } (\forall y \text{ } (\lnot R(x) \lor \lnot O(p, x)) \lor \forall y \text{ } (\lnot R(y) \lor \lnot C(z, y)) \lor H(p, z))$|Applied De Morgan's law twice|
 |SE|Nothing to do|No existentials|
-|DU|$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$|Dropped universal quantifiers|
+|DU|$\lnot R(x) \lor \lnot O(p, x) \lor (\lnot R(y) \lor \lnot C(z, y)) \lor H(p, z)$<br>$\equiv \lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$|1. Dropped universal quantifiers<br>2. Removed extra parantheses|
 |CNF|Nothing to do|Already in CNF|
 
 ### Premise 4
@@ -329,7 +335,7 @@ Source ID|Source expression|
 |Premise 2|$B(ROBIN)$|
 |Premise 3|$\lnot R(x) \lor \lnot O(p, x) \lor \lnot R(y) \lor \lnot C(z, y) \lor H(p, z)$|
 |Premise 4|$(\lnot D(x) \lor R(f_C(x))) \land (\lnot D(x) \lor C(x, f_C(x)))$|
-|Premise 5|$(\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p)))\land (\lnot P(p) \lor \lnot B(p) \lor O(p, f_O(p)))$|
+|Premise 5|$(\lnot B(p) \lor R(f_O(p)) \lor G(f_O(p)))\land (\lnot B(p) \lor O(p, f_O(p)))$|
 |Premise 6|$\lnot O(p, x) \lor \lnot H(q, x) \lor \lnot W(q, p)$|
 |Negated conclusion|$(\lnot G(x) \lor \lnot O(ROBIN, x)) \land (W(ROBIN, YOU))$|
 
@@ -398,10 +404,10 @@ For the following proof, we have mainly used unification and resolution. Note th
 |14|{07, 10}|{ $f_O(x_7)/x_{12}$, $ROBIN/x_7$ }|Unified clauses:<br>07: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor G(f_O(ROBIN))$<br>10: $\lnot G(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$<br><br>Resolution:<br>14: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$|
 |15|{04, 05}|{ $x_4/x_5$, $f_C(x_4)/x_3$ }|Unified clauses:<br>04: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot R(f_C(x_4)) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4)$<br>05: $\lnot D(x_4) \lor R(f_C(x_4))$<br><br>Resolution:<br>15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$|
 |16|{06, 15}|{ $x_4/x_6$ }|Unified clauses:<br>06: $\lnot D(x_4) \lor C(x_4, f_C(x_4))$<br>15: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot C(x_4, f_C(x_4)) \lor H(x_2, x_4) \lor \lnot D(x_4)$<br><br>Resolution:<br>16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor H(x_2, x_4) \lor \lnot D(x_4)$|
-|17|{09, 16}|{ $x_2/x_{11}$, $x_4/x_{10}$ }|Unified clauses:<br>09: $\lnot O(x_9, x_{10}) \lor \lnot H(x_2, x_4) \lor \lnot W(x_4, x_9)$<br>16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor H(x_2, x_4) \lor \lnot D(x_4)$<br><br>Resolution:<br>17: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(x_2, x_9)$|
+|17|{09, 16}|{ $x_2/x_{11}$, $x_4/x_{10}$ }|Unified clauses:<br>09: $\lnot O(x_9, x_{10}) \lor \lnot H(x_2, x_4) \lor \lnot W(x_2, x_9)$<br>16: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor H(x_2, x_4) \lor \lnot D(x_4)$<br><br>Resolution:<br>17: $\lnot R(x_1) \lor \lnot O(x_2, x_1) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(x_2, x_9)$|
 |18|{14, 17}|{ $f_O(x_2)/x_1$, $ROBIN/x_2$ }|Unified clauses:<br>14: $\lnot B(ROBIN) \lor R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN))$<br>17: $\lnot R(f_O(ROBIN)) \lor \lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9)$<br><br>Resolution:<br>18: $\lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
 |19|{08, 18}|{ $ROBIN/x_8$ }|Unified clauses:<br>08: $\lnot B(ROBIN) \lor O(ROBIN, f_O(ROBIN))$<br>18: $\lnot O(ROBIN, f_O(ROBIN)) \lor \lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>19: $\lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
-|20|{01, 19}|{ $d/x_4$ }|Unified clauses:<br>01: $D(d)$<br>19: $\lnot D(x_4) \lor \lnot O(x_9, x_4) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>20: $\lnot O(x_9, d) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
+|20|{01, 19}|{ $d/x_4$ }|Unified clauses:<br>01: $D(d)$<br>19: $\lnot D(d) \lor \lnot O(x_9, d) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>20: $\lnot O(x_9, d) \lor \lnot W(ROBIN, x_9) \lor \lnot B(ROBIN)$|
 |21|{02, 20}|{ $YOU/x_9$ }|Unified clauses:<br>02: $O(YOU, d)$<br>20: $\lnot O(YOU, d) \lor \lnot W(ROBIN, YOU) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>21: $\lnot W(ROBIN, YOU) \lor \lnot B(ROBIN)$|
 |22|{11, 21}|None|Unified clauses:<br>11: $W(ROBIN, YOU)$<br>21: $\lnot W(ROBIN, YOU) \lor \lnot B(ROBIN)$<br><br>Resolution:<br>22: $\lnot B(ROBIN)$|
 |23|{03, 22}|None|Unified clauses:<br>11: $B(ROBIN)$<br>21: $\lnot B(ROBIN)$<br><br>Resolution:<br>22: { $\text { }$ }|
