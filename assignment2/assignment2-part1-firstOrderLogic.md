@@ -1,9 +1,3 @@
-<style>
-    * {font-family: "Times New Roman"}
-    p, ul, ol {font-size: 24px}
-    th, td {font-size: 20px}
-</style>
-
 # ECS759P: _Artificial Intelligence_<br>Assignment 2, Question 1
 
 - **Student name**: Pranav Narendra Gopalkrishna
