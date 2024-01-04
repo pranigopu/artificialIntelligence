@@ -49,7 +49,7 @@ $h_1$ is an admissible heuristic, so it never overestimates the true cost from a
 ## Question 2
 ### 2.a
 #### 2.a (i)
-State representation is a string of 6 elements where each element is either T (testify) or R (refuse to testify). The string indices correspond to the rounds. For reference, the string of actions for P1 (player 1): RTRTRT).
+State representation is a string of 6 elements where each element is either T (testify) or R (refuse to testify). The string indices correspond to the rounds. For reference, the string of actions for P1 (player 1): RTRTRT.
 
 #### 2.a (ii)
 Chromosome for P2 (player 2): TTTTTT
