@@ -83,7 +83,7 @@ Parents:
 - RRTRTR
 
 - c-i = T (from parent 1) + RTR (from parent 2) + TT (from parent 1) = TRTRTT
-- c-ii = R (from parent 2) + TTT (from parent 1) + TR (from parent 1) = RTTTTR
+- c-ii = R (from parent 2) + TTT (from parent 1) + TR (from parent 2) = RTTTTR
 
 For c-i:
 
