@@ -76,8 +76,8 @@ Of course, we can generalise this in the continuous case, but since the probabil
 
 $f_{x+y}(t)$
 
-$\displaystyle = \int_{-\infty}^{\infty} \int_{\{b \in Y | a + b = t\}} P_x(a) P_y(b) db da = \int_{-\infty}^{\infty} \int_{\{a \in X | a + b = t\}} P_x(a) P_y(b) da db$
+$\displaystyle = \int_{-\infty}^{\infty} \int_{\{b \in Y | a + b = t\}} f_x(a) f_y(b) db da = \int_{-\infty}^{\infty} \int_{\{a \in X | a + b = t\}} f_x(a) f_y(b) da db$
 
-$\displaystyle = \int_{-\infty}^{\infty}  P_x(a) P_y(t-a) da = \int_{-\infty}^{\infty} P_x(t-a) P_y(a) da$
+$\displaystyle = \int_{-\infty}^{\infty}  f_x(a) f_y(t-a) da = \int_{-\infty}^{\infty} f_x(t-a) f_y(a) da$
 
 Again, it is clear that this is the convolution $P_x * P_y$, validating the result for the continuous case as well.
