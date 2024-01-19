@@ -42,10 +42,14 @@ Note that the definition of convolution in the continuous case generalises the o
 As we saw, the definition of convolution in the continuous case generalises the one given in the discrete case. To generalise in words, the $n$-th convolution between two functions $f$ and $g$ is the integral (or sum, in the discrete case) of the products between all values of $f$ and all values of $g$ wherein the sum of the preimages (i.e. the inputs to the functions) is $n$. Clearly, convolution between two functions produces an new function (in the discrete case, this function could be in the form of a new list or dictionary).
 <br><br>
 
-_What is the point, though?_
+_What is the point, though?_ We shall see that convolution is a natural way of expressing:
+
+- The sum of two probability distributions
+- Moving averages (including weighted moving averages)
+- Polynomial multiplication
 
 ## Concretising convolution
-### Distribution of the sum of two distributions
+### The sum of two distributions
 _Henceforth, "distribution" = "probability distribution" unless stated otherwise._
 <br><br>
 
