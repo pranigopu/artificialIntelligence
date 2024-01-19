@@ -24,7 +24,7 @@ $(X_1 * X_2)_n$
 
 $\displaystyle = \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}^{n_2} X_1[n_2 - i] X_2[i]$
 
-$(X_1 * X_2)_n$ is the "$n$-th convolution of $X_1$ and $X_2$"
+$(X_1 * X_2)_n$ is the " $n$-th convolution of $X_1$ and $X_2$ "
 <br><br>
 
 Note that in the above sums, if $n_1 - i$ goes beyond the indices of $X_2$ or $n_2 - i$ goes beyond the indices of $X_1$, the product is taken as zero. The reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(X_1*X_2)=(X_2*X_1)$.
