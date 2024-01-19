@@ -85,4 +85,4 @@ $\displaystyle = \int_{-\infty}^{\infty} \int_{\{b \in Y | a + b \in B\}} P_x(a)
 
 $\displaystyle = \int_{-\infty}^{\infty}  P_x(a) P_y(n-a) da = \int_{-\infty}^{\infty} P_x(n-a) P_y(a) da$
 
-Again, it is clear that this is the convolution $P_x * P_y$, validating the result we obtained for the discrete case for the continuous case as well.
+Again, it is clear that this is the convolution $P_x * P_y$, validating the result for the continuous case as well.
