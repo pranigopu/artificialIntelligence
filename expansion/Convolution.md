@@ -61,9 +61,7 @@ In words, the probability mass of any subset $B$ of possible sums between elemen
 
 Fisrt, consider the discrete case, i.e. consider $X$ and $Y$ are discrete sets. Now, consider, what is the probability mass of every pair from $X \times Y$ whose sum lies in $B$? Using the definition of a product measure (since the distribution of these pairs is the product measure $P_x \bigotimes P_y$), and given that $n_x = |X|$ and $n_y = |Y|$, we get the following:
 
-$(P_x + P_y)(t)$
-
-$= (P_x \bigotimes P_y)(\{(a, b) \in X \times Y | a + b = t\})$
+$(P_x + P_y)(t) = (P_x \bigotimes P_y)(\{(a, b) \in X \times Y | a + b = t\})$
 
 $\displaystyle = \sum_{\{(a, b) \in X \times Y | a + b = t\}} P_x(a) P_y(b)$
 
