@@ -20,18 +20,18 @@ $\displaystyle \implies Y[k] = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{
 
 _This is the convolution operation, notated formally_ $X_1 * X_2$. More specifically, the $k$-th convolution of $X_1$ and $X_2$ is:
 
-$\displaystyle (X_1 * X_2)_ k \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$
+$\displaystyle (X_1 * X_2)_ k = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$
 
 Note that in the above sums, if $k - i$ goes beyond the indices of $X_2$ or $k - i$ goes beyond the indices of $X_1$, the product is taken as zero. The reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(X_1 * X_2)=(X_2 * X_1)$.
 
 ### Continuous case
 Let $f$ and $g$ be two functions defined on the intervals $A$ and $B$ (either or both could be unbounded). The convolution of $f$ and $g$, notated as $f * g$, is a new function such that:
 
-$\displaystyle (f*g)(n) = \int_{-\infty}^{\infty} \int_{y|x+y=k} f(x)g(y) dy dx = \int_{-\infty}^{\infty} \int_{x|x+y=k} f(x)g(y) dx dy$
+$\displaystyle (f * g)(n) = \int_{-\infty}^{\infty} \int_{y|x+y=k} f(x)g(y) dy dx = \int_{-\infty}^{\infty} \int_{x|x+y=k} f(x)g(y) dx dy$
 
-$\displaystyle \implies (f*g)(n) = \int_{-\infty}^{\infty} f(x)g(n-x) dx = \int_{-\infty}^{\infty} f(n-x)g(x) dx$
+$\displaystyle \implies (f * g)(n) = \int_{-\infty}^{\infty} f(x)g(n-x) dx = \int_{-\infty}^{\infty} f(n-x)g(x) dx$
 
-Similar to the discrete case, note that in the above integrals, if $n - x$ goes beyond the domain of either $f$ or $g$, the product is taken as zero. Here too, the reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(f*g)=(g*f)$.
+Similar to the discrete case, note that in the above integrals, if $n - x$ goes beyond the domain of either $f$ or $g$, the product is taken as zero. Here too, the reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(f * g)=(g * f)$.
 <br><br>
 
 Note that the definition of convolution in the continuous case generalises the one given in the discrete case. We can see this if we define $f(x) = X_1[x]$ (i.e. the element of $X_1$ at index $x$) and $g(x) = X_2[x]$ (i.e. the element of $X_2$ at index $x$). This is a natural fact when you note that any list (i.e. ordered set) or dictionary (i.e. a mapping between keys and values) is a kind of function, namely a function that maps one discrete value (the index or the key) to another (the value at the index or key); of course, for convolution, we assume that we deal with quantities and not labels. Of course, the integral becomes a summation in the discrete case.
