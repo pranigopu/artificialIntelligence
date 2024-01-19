@@ -16,7 +16,7 @@ Consider an abstract, maybe puzzling problem. Given two lists (i.e. ordered sets
 
 $\displaystyle Y[k] = \sum_{\forall (i \in I, j \in J) | i + j = k} X_1[i] X_2[j] \implies Y[k] = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$
 
-_This is the convolution operation, notated formally_ $X_1 * X_2$. More specifically, the $k$-th convolution of $X_1$ and $X_2$ is:
+_This is the convolution operation, notated formally as_ $X_1 * X_2$. More specifically, the $k$-th convolution of $X_1$ and $X_2$ is:
 
 $\displaystyle (X_1 * X_2)_ k = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$
 
