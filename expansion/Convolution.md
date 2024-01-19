@@ -16,11 +16,12 @@ Consider an abstract, maybe puzzling problem. Given two lists (i.e. ordered sets
 
 $\displaystyle Y[k] = \sum_{\forall (i \in I, j \in J) | i + j = k} X_1[i] X_2[j] \implies Y[k] = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$
 
-_This is the convolution operation, notated formally as_ $X_1 * X_2$. More specifically, the $k$-th convolution of $X_1$ and $X_2$ is:
+_This is the convolution operation, notated formally as_ $X_1 * X_2$. More specifically:
 
-$\displaystyle (X_1 * X_2)_ k = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$
+- $X_1 * X_2 = Y$
+- $\displaystyle (X_1 * X_2)_ k = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$<br>**NOTE**: _This is the_ $k$-th _convolution of_ $X_1$ _and_ $X_2$
 
-Note that in the above sums, if $k - i$ goes beyond the indices of $X_2$ or $k - i$ goes beyond the indices of $X_1$, the product is taken as zero. The reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(X_1 * X_2)=(X_2 * X_1)$.
+Note that in the above sums, if $k - i$ goes beyond the indices of $X_2$ or $k - i$ goes beyond the indices of $X_1$, the product is taken as zero. The reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $X_1 * X_2 = X_2 * X_1$.
 
 ### Continuous case
 Let $f$ and $g$ be two functions defined on the intervals $A$ and $B$ (either or both could be unbounded). The convolution of $f$ and $g$, notated as $f * g$, is a new function such that:
