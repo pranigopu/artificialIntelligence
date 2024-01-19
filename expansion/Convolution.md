@@ -78,6 +78,7 @@ $\displaystyle = \sum_a^{n_x} P_x(a) P_y(n_x - a) = \sum_a^{n_y} P_x(n_y - a) P_
 Clearly, if $n_x - a$ lies outside $Y$, the probability mass will be zero, since it lies outside the support of the distribution $P_y$. The same is the case if $n_y - a$ lies outside $X$. From the last line, we can clearly see that it is the convolution $P_x * P_y$, i.e. the convolution between the distributions $P_x$ and $P_y$ (which are also kinds of functions). Hence, given that $P_x$ and $P_y$ are independent distributions, we have that:
 
 $P_x + P_y = P_x * P_y$
+<br><br>
 
 Of course, we can generalise this in the continuous case, but since the probability mass at a point in the interval is zero yet the probability mass of an interval as such may not be zero, we need to express probability mass as integrals of the probability density function, i.e. PDF. **_As a side note_**_, the PDF is the derivative of the cumulative probability mass, which turns out to be a function such that the area under the curve for some interval_ $[a, b]$ _is in fact the probability mass of this interval under the given distribution. The justification for this is given [here](https://github.com/pranigopu/appliedStatistics/blob/585f2ad9373a779e0a4dfcfcb23304b790522f1a/expansion/QP-Quantifying%20Probability.md)._ Let $f_x$ be the PDF for $P_x$, $f_y$ be the PDF for $P_y$ and $f_{x+y}$ be the PDF of $P_x + P_y$. Then, we have that:
 
