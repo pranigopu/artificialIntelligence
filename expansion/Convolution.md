@@ -16,11 +16,11 @@ Consider an abstract, maybe puzzling problem. Given two lists (i.e. ordered sets
 
 $\displaystyle Y[k] = \sum_{\forall (i \in I, j \in J) | i + j = k + 1} X_1[i] X_2[j]$
 
-$\implies Y[k] = \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}^{n_2} X_1[n_2 - i] X_2[i]$
+$\displaystyle \implies Y[k] = \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}^{n_2} X_1[n_2 - i] X_2[i]$
 
 This is the convolution operation, notated formally as:
 
-$(X_1 * X_2)_n = \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}^{n_2} X_1[n_2 - i] X_2[i]$
+$\displaystyle (X_1 * X_2)_n = \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}^{n_2} X_1[n_2 - i] X_2[i]$
 
 $(X_1 * X_2)_n$ is the "$n$-th convolution of $X_1$ and $X_2$"
 <br><br>
@@ -70,7 +70,7 @@ $(P_x \bigotimes P_y)(\{(a, b) \in X \times Y | a + b \in B\})$
 
 $\displaystyle = \sum_{\{(a, b) \in X \times Y | a + b \in B\}} P_x(a) P_y(b)$
 
-$= \sum_a^{n_x} P_x(a) P_y(n_x - a) = \sum_a^{n_y} P_x(n_y - a) P_y(a)$
+$\displaystyle = \sum_a^{n_x} P_x(a) P_y(n_x - a) = \sum_a^{n_y} P_x(n_y - a) P_y(a)$
 
 Clearly, if $n_x - a$ lies outside $Y$, the probability mass will be zero, since it lies outside the support of the distribution $P_y$. The same is the case if $n_y - a$ lies outside $X$. From the last line, we can clearly see that it is the convolution $P_x * P_y$, i.e. the convolution between the distributions $P_x$ and $P_y$ (which are also kinds of functions). Hence, given that $P_x$ and $P_y$ are independent distributions, we have that:
 
