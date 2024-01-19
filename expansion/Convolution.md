@@ -42,14 +42,9 @@ Note that the definition of convolution in the continuous case generalises the o
 As we saw, the definition of convolution in the continuous case generalises the one given in the discrete case. To generalise in words, the $n$-th convolution between two functions $f$ and $g$ is the integral (or sum, in the discrete case) of the products between all values of $f$ and all values of $g$ wherein the sum of the preimages (i.e. the inputs to the functions) is $n$. Clearly, convolution between two functions produces an new function (in the discrete case, this function could be in the form of a new list or dictionary) whose domain is the set of all possible sums between elements of the domains of $f$ and $g$.
 <br><br>
 
-_What is the point, though?_ We shall see that convolution is a natural way of expressing:
+_What is the point, though?_ We shall see that convolution is a natural way of expressing the sum of two probability distributions. The idea of a convolution, however, extends to moving averages (including weighted moving averages), polynomial multiplication.the filtering of matrices (here, the convolution is defined in multi-dimensional spaces). We shall see how convolution applies to the sum of two probability distributions, but I invite you to consider by yourself its application on moving averages and polynomial multiplication. For reference, I used the video ["But what is a convolution?"](https://www.youtube.com/watch?v=KuXjwB4LzSA), where these other applications are also discussed. We shall, however, explore convolution as it applies in the filtering or processing of matrices, since this is a key aspect of covolutional neural networks.
 
-- The sum of two probability distributions
-- Moving averages (including weighted moving averages)
-- Polynomial multiplication
-
-## Concretising convolution
-### The sum of two distributions
+## Convolution & the sum of two distributions
 _Henceforth, "distribution" = "probability distribution" unless stated otherwise._
 <br><br>
 
