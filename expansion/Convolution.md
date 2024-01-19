@@ -63,7 +63,7 @@ Fisrt, consider the discrete case, i.e. consider $X$ and $Y$ are discrete sets. 
 
 $(P_x + P_y)(t)$
 
-$ = (P_x \bigotimes P_y)(\{(a, b) \in X \times Y | a + b = t\})$
+$= (P_x \bigotimes P_y)(\{(a, b) \in X \times Y | a + b = t\})$
 
 $\displaystyle = \sum_{\{(a, b) \in X \times Y | a + b = t\}} P_x(a) P_y(b)$
 
