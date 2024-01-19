@@ -18,13 +18,11 @@ $\displaystyle Y[k] = \sum_{\forall (i \in I, j \in J) | i + j = k} X_1[i] X_2[j
 
 $\displaystyle \implies Y[k] = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$
 
-_This is the convolution operation, notated formally_ $X_1 * X_2$.
+_This is the convolution operation, notated formally_ $X_1 * X_2$. More specifically, the $k$-th convolution of $X_1$ and $X_2$ is:
 
-More specifically, the $k$-th convolution of $X_1$ and $X_2$ $, i.e. (X_1 * X_2)_k$ is given by:
+$\displaystyle (X_1 * X_2)_ k \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$
 
-$\displaystyle \sum_{i=1}^{n_1} X_1[i] X_2[n - i] = \sum_{i=1}^{n_2} X_1[n - i] X_2[i]$
-
-Note that in the above sums, if $k - i$ goes beyond the indices of $X_2$ or $k - i$ goes beyond the indices of $X_1$, the product is taken as zero. The reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(X_1*X_2)=(X_2*X_1)$.
+Note that in the above sums, if $k - i$ goes beyond the indices of $X_2$ or $k - i$ goes beyond the indices of $X_1$, the product is taken as zero. The reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(X_1 * X_2)=(X_2 * X_1)$.
 
 ### Continuous case
 Let $f$ and $g$ be two functions defined on the intervals $A$ and $B$ (either or both could be unbounded). The convolution of $f$ and $g$, notated as $f * g$, is a new function such that:
@@ -55,7 +53,7 @@ $P_x \bigotimes P_y(A \subseteq X \times Y) = P_x(A) P_y(A)$
 This only expresses the fact that the joint probability of observing two independent events is the probability of observing one event AND the probability of observing the other event (AND implies multiplication, here), no other conditions applied (note that $A$ being a subset of $X \times Y$ means it contains one or more jointly observed events).
 <br><br>
 
-The sum operator can be expressed as the function: $+:\mathbb{R}^2 \rightarrow \mathbb{R}, (x, y) \mapsto x + y$. Clearly, $X \times Y \subseteq \mathbb{R}^2$, which means " $+$ " also maps the elements of $X \times Y$ to the elements of $S$ = { $x + y, (x, y) \in X \times Y$ }, i.e. to the set of all possible sums between elements of $X$ and $Y$. Hence, we can define the distribution of $S$ using the distribution of $X \times Y$ and the function " $+$ " as the pushforward measure of $P_x \bigotimes P_y$ through " $+$ ". For more clarity, we shall also notate this pushforward measure $+_*(P_x \bigotimes P_y)$ as $P_x + P_y$. Then, by the definition of pushforward, for any $U \subseteq S$, we then have that:
+The sum operator can be expressed as the function: $+:\mathbb{R}^2 \rightarrow \mathbb{R}, (x, y) \mapsto x + y$. Clearly, $X \times Y \subseteq \mathbb{R}^2$, which means " $+$ " also maps the elements of $X \times Y$ to the elements of $S$ = { $x + y, (x, y) \in X \times Y$ }, i.e. to the set of all possible sums between elements of $X$ and $Y$. Hence, we can define the distribution of $S$ using the distribution of $X \times Y$ and the function " $+$ " as the pushforward measure of $P_x \bigotimes P_y$ through " $+$ ", i.e. $+_* (P_x \bigotimes P_y)$ as $P_x + P_y$. For more clarity, we shall also notate $+_* (P_x \bigotimes P_y)$ as $P_x + P_y$. Then, by the definition of pushforward, for any $U \subseteq S$, we then have that:
 
 $(P_x + P_y)(U) = +_*(P_x \bigotimes P_y)(U) = (P_x \bigotimes P_y)(\{(x, y) \in X \times Y | x + y \in U\})$
 
