@@ -2,7 +2,7 @@
 
 ## Abstract definition
 ### Discrete case
-Consider an abstract, maybe puzzling problem. Given two lists (i.e. ordered sets) of values $X_1$ and $X_2$, create a new list of values $Y$ such that $Y[k]$ (i.e. the element of $Y$ at index $k$) holds the sum of the products between all $a \in X_1$ and all $b \in X_2$ wherein the index of $a$ in $X_1$ and the index of $b$ in $X_2$ add up to $k + 1$. In other terms, given the following...
+Consider an abstract, maybe puzzling problem. Given two lists (i.e. ordered sets) of values $X_1$ and $X_2$, create a new list of values $Y$ such that $Y[k]$ (i.e. the element of $Y$ at index $k$) holds the sum of the products between all $a \in X_1$ and all $b \in X_2$ wherein the index of $a$ in $X_1$ and the index of $b$ in $X_2$ add up to $k$. In other terms, given the following...
 
 - $X_1[i]$ is the element of $X_1$ at index $i$
 - $X_2[j]$ is the element of $X_2$ at index $j$
@@ -14,17 +14,17 @@ Consider an abstract, maybe puzzling problem. Given two lists (i.e. ordered sets
 
 ... we have that:
 
-$\displaystyle Y[k] = \sum_{\forall (i \in I, j \in J) | i + j = k + 1} X_1[i] X_2[j]$
+$\displaystyle Y[k] = \sum_{\forall (i \in I, j \in J) | i + j = k} X_1[i] X_2[j]$
 
-$\displaystyle \implies Y[k] = \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}^{n_2} X_1[n_2 - i] X_2[i]$
+$\displaystyle \implies Y[k] = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$
 
-This is the convolution operation, notated formally $X_1 * X_2$.
+_This is the convolution operation, notated formally_ $X_1 * X_2$.
 
-More specifically, the $n$-th convolution of $X_1$ and $X_2$ $, i.e. (X_1 * X_2)_n$ is given by:
+More specifically, the $k$-th convolution of $X_1$ and $X_2$ $, i.e. (X_1 * X_2)_k$ is given by:
 
-$\displaystyle \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}^{n_2} X_1[n_2 - i] X_2[i]$
+$\displaystyle \sum_{i=1}^{n_1} X_1[i] X_2[n - i] = \sum_{i=1}^{n_2} X_1[n - i] X_2[i]$
 
-Note that in the above sums, if $n_1 - i$ goes beyond the indices of $X_2$ or $n_2 - i$ goes beyond the indices of $X_1$, the product is taken as zero. The reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(X_1*X_2)=(X_2*X_1)$.
+Note that in the above sums, if $k - i$ goes beyond the indices of $X_2$ or $k - i$ goes beyond the indices of $X_1$, the product is taken as zero. The reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(X_1*X_2)=(X_2*X_1)$.
 
 ### Continuous case
 Let $f$ and $g$ be two functions defined on the intervals $A$ and $B$ (either or both could be unbounded). The convolution of $f$ and $g$, notated as $f * g$, is a new function such that:
@@ -64,23 +64,25 @@ In words, the probability mass of any subset $B$ of possible sums between elemen
 
 Fisrt, consider the discrete case, i.e. consider $X$ and $Y$ are discrete sets. Now, consider, what is the probability mass of every pair from $X \times Y$ whose sum lies in $B$? Using the definition of a product measure (since the distribution of these pairs is the product measure $P_x \bigotimes P_y$), and given that $n_x = |X|$ and $n_y = |Y|$, we get the following:
 
-$(P_x \bigotimes P_y)(\{(a, b) \in X \times Y | a + b \in B\})$
+$(P_x + P_y)(t)$
 
-$\displaystyle = \sum_{\{(a, b) \in X \times Y | a + b \in B\}} P_x(a) P_y(b)$
+$ = (P_x \bigotimes P_y)(\{(a, b) \in X \times Y | a + b = t\})$
 
-$\displaystyle = \sum_a^{n_x} P_x(a) P_y(n_x - a) = \sum_a^{n_y} P_x(n_y - a) P_y(a)$
+$\displaystyle = \sum_{\{(a, b) \in X \times Y | a + b = t\}} P_x(a) P_y(b)$
 
-Clearly, if $n_x - a$ lies outside $Y$, the probability mass will be zero, since it lies outside the support of the distribution $P_y$. The same is the case if $n_y - a$ lies outside $X$. From the last line, we can clearly see that it is the convolution $P_x * P_y$, i.e. the convolution between the distributions $P_x$ and $P_y$ (which are also kinds of functions). Hence, given that $P_x$ and $P_y$ are independent distributions, we have that:
+$\displaystyle = \sum_a^{n_x} P_x(a) P_y(t - a) = \sum_a^{n_y} P_x(t - a) P_y(a)$
+
+Clearly, if $t - a$ lies outside $Y$, the probability mass will be zero, since it lies outside the support of the distribution $P_y$. The same is the case if $t - a$ lies outside $X$. From the last line, we can clearly see that it is the convolution $P_x * P_y$, i.e. the convolution between the distributions $P_x$ and $P_y$ (which are also kinds of functions). Hence, given that $P_x$ and $P_y$ are independent distributions, we have that:
 
 $P_x + P_y = P_x * P_y$
 <br><br>
 
 Of course, we can generalise this in the continuous case, but since the probability mass at a point in the interval is zero yet the probability mass of an interval as such may not be zero, we need to express probability mass as integrals of the probability density function, i.e. PDF. **_As a side note_**_, the PDF is the derivative of the cumulative probability mass, which turns out to be a function such that the area under the curve for some interval_ $[a, b]$ _is in fact the probability mass of this interval under the given distribution. The justification for this is given [here](https://github.com/pranigopu/appliedStatistics/blob/585f2ad9373a779e0a4dfcfcb23304b790522f1a/expansion/QP-Quantifying%20Probability.md)._ Let $f_x$ be the PDF for $P_x$, $f_y$ be the PDF for $P_y$ and $f_{x+y}$ be the PDF of $P_x + P_y$. Then, we have that:
 
-$f_{x+y}(n)$
+$f_{x+y}(t)$
 
-$\displaystyle = \int_{-\infty}^{\infty} \int_{\{b \in Y | a + b \in B\}} P_x(a) P_y(b) db da = \int_{-\infty}^{\infty} \int_{\{a \in X | a + b \in B\}} P_x(a) P_y(b) da db$
+$\displaystyle = \int_{-\infty}^{\infty} \int_{\{b \in Y | a + b = t\}} P_x(a) P_y(b) db da = \int_{-\infty}^{\infty} \int_{\{a \in X | a + b = t\}} P_x(a) P_y(b) da db$
 
-$\displaystyle = \int_{-\infty}^{\infty}  P_x(a) P_y(n-a) da = \int_{-\infty}^{\infty} P_x(n-a) P_y(a) da$
+$\displaystyle = \int_{-\infty}^{\infty}  P_x(a) P_y(t-a) da = \int_{-\infty}^{\infty} P_x(t-a) P_y(a) da$
 
 Again, it is clear that this is the convolution $P_x * P_y$, validating the result for the continuous case as well.
