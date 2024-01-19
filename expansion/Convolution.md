@@ -19,7 +19,7 @@ $\displaystyle Y[k] = \sum_{\forall (i \in I, j \in J) | i + j = k} X_1[i] X_2[j
 _This is the convolution operation, notated formally as_ $X_1 * X_2$. More specifically:
 
 - $X_1 * X_2 = Y$
-- $\displaystyle (X_1 * X_2)_ k = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$<br>**NOTE**: _This is the_ $k$-th _convolution of_ $X_1$ _and_ $X_2$
+- $\displaystyle (X_1 * X_2)_ k = \sum_{i=1}^{n_1} X_1[i] X_2[k - i] = \sum_{i=1}^{n_2} X_1[k - i] X_2[i]$ ($k$-th _convolution of_ $X_1$ _and_ $X_2$)
 
 Note that in the above sums, if $k - i$ goes beyond the indices of $X_2$ or $k - i$ goes beyond the indices of $X_1$, the product is taken as zero. The reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $X_1 * X_2 = X_2 * X_1$.
 
