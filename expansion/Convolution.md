@@ -56,7 +56,7 @@ The sum operator can be expressed as the function: $+:\mathbb{R}^2 \rightarrow \
 
 $(P_x + P_y)(U) = +_*(P_x \bigotimes P_y)(U) = (P_x \bigotimes P_y)(\{(x, y) \in X \times Y | x + y \in U\})$
 
-In words, the probability mass of any subset $U$ of possible sums between elements of $X$ and $Y$ is exactly the probability mass of every pair from $X \times Y$ whose sum lies in $U$. **_As a side note_**_, know that in the discrete case,_ $U$ _can hold one element alone, but in the continuous case, the probability mass of any discrete set of points (one or many) is zero, so we have to generalise our statements using subsets (which could be continuous too)_.
+In words, the probability mass of any subset $U$ of possible sums between elements of $X$ and $Y$ is exactly the probability mass of every pair from $X \times Y$ whose sum lies in $U$. **_As a side note_**_, know that in the discrete case,_ $U$ _can hold one or more elements, but in the continuous case, the probability mass of any discrete set of points (one or many) is zero, so we have to generalise our statements using subsets (which could be continuous too)_.
 <br><br>
 
 Fisrt, consider the discrete case, i.e. consider $X$ and $Y$ are discrete sets. Now, consider, what is the probability mass of every pair from $X \times Y$ whose sum lies in $B$? Using the definition of a product measure (since the distribution of these pairs is the product measure $P_x \bigotimes P_y$), and given that $n_x = |X|$ and $n_y = |Y|$, we get the following:
