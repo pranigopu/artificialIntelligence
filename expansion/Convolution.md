@@ -29,7 +29,7 @@ $\displaystyle (f * g)(n) = \int_{-\infty}^{\infty} \int_{y|x+y=k} f(x)g(y) dy d
 
 $\displaystyle \implies (f * g)(n) = \int_{-\infty}^{\infty} f(x)g(n-x) dx = \int_{-\infty}^{\infty} f(n-x)g(x) dx$
 
-Similar to the discrete case, note that in the above integrals, if $n - x$ goes beyond the domain of either $f$ or $g$, the product is taken as zero. Here too, the reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $(f * g)=(g * f)$.
+Similar to the discrete case, note that in the above integrals, if $n - x$ goes beyond the domain of either $f$ or $g$, the product is taken as zero. Here too, the reason this is justified shall be seen when we see this abstract operation in more specific contexts. Of course, since multiplication is commutative, we could as well rearrange the terms of each product. This means convolution is also commutative, i.e. $f * g = g * f$.
 <br><br>
 
 Note that the definition of convolution in the continuous case generalises the one given in the discrete case. We can see this if we define $f(x) = X_1[x]$ (i.e. the element of $X_1$ at index $x$) and $g(x) = X_2[x]$ (i.e. the element of $X_2$ at index $x$). This is a natural fact when you note that any list (i.e. ordered set) or dictionary (i.e. a mapping between keys and values) is a kind of function, namely a function that maps one discrete value (the index or the key) to another (the value at the index or key); of course, for convolution, we assume that we deal with quantities and not labels. Of course, the integral becomes a summation in the discrete case.
