@@ -20,7 +20,7 @@ $\displaystyle \implies Y[k] = \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}
 
 This is the convolution operation, notated formally $X_1 * X_2$, where the $n$-th convolution $(X_1 * X_2)_n$ is:
 
-$\displaystyle = \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}^{n_2} X_1[n_2 - i] X_2[i]$
+$\displaystyle \sum_{i=1}^{n_1} X_1[i] X_2[n_1 - i] = \sum_{i=1}^{n_2} X_1[n_2 - i] X_2[i]$
 
 $(X_1 * X_2)_n$ is the " $n$-th convolution of $X_1$ and $X_2$ "
 <br><br>
